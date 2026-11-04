@@ -1,0 +1,72 @@
+name: Zone Bot
+
+on:
+  schedule:
+    - cron: '2-59/5 * * * *'      # every 5 minutes (GitHub may delay it, see step 9 for exact timing)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'run = normal | test = send a test message + sample chart'
+        type: choice
+        options:
+          - run
+          - test
+        default: run
+
+concurrency:
+  group: zone-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install
+        run: |
+          python -m pip install --quiet --disable-pip-version-check requests pillow
+          python -m pip install --quiet --disable-pip-version-check curl_cffi || echo "curl_cffi not available, continuing without it"
+
+      - name: Check write access (needed to save the state)
+        run: git push --dry-run origin "HEAD:${{ github.ref_name }}"
+
+      - name: Run bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MODE: ${{ github.event.inputs.mode || 'run' }}
+        run: python bot.py "$MODE"
+
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "zone-bot"
+          git config user.email "zone-bot@users.noreply.github.com"
+          git add -A state.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "state unchanged"
+            exit 0
+          fi
+          git commit -q -m "state $(date -u +%F_%H:%M)"
+          for i in 1 2 3; do
+            if git pull --rebase --autostash -q && git push -q; then
+              echo "state saved"
+              exit 0
+            fi
+            sleep 3
+          done
+          echo "could not push the state"
+          exit 1
