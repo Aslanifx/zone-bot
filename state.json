@@ -162,8 +162,9 @@
    "symbol": "NAS100",
    "tf": "1H",
    "top": 27251.5,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1793977500,
+   "touched": true,
    "win": []
   }
  ]
