@@ -3,7 +3,7 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1793923200
+   "last_1h_close": 1793926800
   },
   "ETHUSD": {
    "last_1h_close": 1793923200
@@ -18,19 +18,19 @@
   },
   "GER40": {
    "last_1h_close": 1793899800,
-   "next_1h_try": 1793926812,
+   "next_1h_try": 1793930412,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1793923200,
+   "last_1h_close": 1793926800,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1793923200,
+   "last_1h_close": 1793926800,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1793923200,
+   "last_1h_close": 1793926800,
    "src": "YM=F"
   },
   "USDJPY": {
@@ -38,7 +38,7 @@
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1793923200,
+   "last_1h_close": 1793926800,
    "src": "GC=F"
   }
  },
