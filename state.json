@@ -113,8 +113,9 @@
    "symbol": "USDJPY",
    "tf": "1H",
    "top": 158.1649932861328,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1793978700,
+   "touched": true,
    "win": []
   },
   {
