@@ -1,9 +1,9 @@
 {
- "heartbeat": "2026-11-06",
+ "heartbeat": "2026-11-07",
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1794006000
+   "last_1h_close": 1794009600
   },
   "ETHUSD": {
    "last_1h_close": 1794006000
@@ -18,7 +18,7 @@
   },
   "GER40": {
    "last_1h_close": 1793986200,
-   "next_1h_try": 1794009612,
+   "next_1h_try": 1794013212,
    "src": "^GDAXI"
   },
   "NAS100": {
@@ -35,6 +35,7 @@
   },
   "USDJPY": {
    "last_1h_close": 1794006000,
+   "next_5m_try": 1794010255,
    "src": "JPY=X"
   },
   "XAUUSD": {
