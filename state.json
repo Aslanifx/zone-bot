@@ -39,6 +39,9 @@
    "src": "YM=F"
   },
   "USDJPY": {
+   "fail_5m": {
+    "first": 1794024933
+   },
    "last_1h_close": 1794006000,
    "next_1h_try": 1794027612,
    "next_5m_try": 1794024651,
