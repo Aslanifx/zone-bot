@@ -40,7 +40,8 @@
   },
   "USDJPY": {
    "fail_5m": {
-    "first": 1794024933
+    "first": 1794024933,
+    "warned": true
    },
    "last_1h_close": 1794006000,
    "next_1h_try": 1794031212,
