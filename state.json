@@ -3,10 +3,10 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1794013200
+   "last_1h_close": 1794016800
   },
   "ETHUSD": {
-   "last_1h_close": 1794013200
+   "last_1h_close": 1794016800
   },
   "EURUSD": {
    "last_1h_close": 1794006000,
@@ -41,7 +41,7 @@
   "USDJPY": {
    "last_1h_close": 1794006000,
    "next_1h_try": 1794017131,
-   "next_5m_try": 1794017124,
+   "next_5m_try": 1794017726,
    "src": "JPY=X"
   },
   "XAUUSD": {
