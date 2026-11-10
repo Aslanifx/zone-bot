@@ -9,27 +9,27 @@
    "last_1h_close": 1794312000
   },
   "EURUSD": {
-   "last_1h_close": 1794312000,
+   "last_1h_close": 1794315600,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1794312000,
+   "last_1h_close": 1794315600,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1794312000,
+   "last_1h_close": 1794315600,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1794312000,
+   "last_1h_close": 1794315600,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1794312000,
+   "last_1h_close": 1794315600,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1794312000,
+   "last_1h_close": 1794315600,
    "src": "YM=F"
   },
   "USDJPY": {
@@ -37,37 +37,12 @@
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1794312000,
+   "last_1h_close": 1794315600,
    "src": "GC=F"
   }
  },
  "version": 1,
  "zones": [
-  {
-   "bottom": 4131.39990234375,
-   "close_price": 4127.60009765625,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1793883600,
-   "hunt_level": 4143.60009765625,
-   "hunt_t": 1793869200,
-   "id": "XAUUSD-S-1793883600",
-   "late": false,
-   "level": 4131.39990234375,
-   "msg_id": 27,
-   "mss_swing_t": 1793872800,
-   "notified": true,
-   "src": "yahoo:GC=F",
-   "sweep_extreme": 4147.7001953125,
-   "sweep_t": 1793876400,
-   "symbol": "XAUUSD",
-   "tf": "1H",
-   "top": 4143.60009765625,
-   "touch_sent": true,
-   "touch_t": 1793883600,
-   "touched": true,
-   "win": []
-  },
   {
    "bottom": 26903.0,
    "close_price": 27159.75,
