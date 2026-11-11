@@ -9,65 +9,40 @@
    "last_1h_close": 1794402000
   },
   "EURUSD": {
-   "last_1h_close": 1794402000,
+   "last_1h_close": 1794405600,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1794402000,
+   "last_1h_close": 1794405600,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1794402000,
+   "last_1h_close": 1794405600,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1794402000,
+   "last_1h_close": 1794405600,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1794402000,
+   "last_1h_close": 1794405600,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1794402000,
+   "last_1h_close": 1794405600,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1794402000,
+   "last_1h_close": 1794405600,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1794402000,
+   "last_1h_close": 1794405600,
    "src": "GC=F"
   }
  },
  "version": 1,
  "zones": [
-  {
-   "bottom": 75843.29,
-   "close_price": 75798.2,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1793973600,
-   "hunt_level": 76190.07,
-   "hunt_t": 1793959200,
-   "id": "BTCUSD-S-1793973600",
-   "late": false,
-   "level": 75843.29,
-   "msg_id": 32,
-   "mss_swing_t": 1793962800,
-   "notified": true,
-   "src": "coinbase:BTC-USD",
-   "sweep_extreme": 76256.44,
-   "sweep_t": 1793966400,
-   "symbol": "BTCUSD",
-   "tf": "1H",
-   "top": 76190.07,
-   "touch_sent": true,
-   "touch_t": 1793973600,
-   "touched": true,
-   "win": []
-  },
   {
    "bottom": 27049.5,
    "close_price": 27394.75,
@@ -439,6 +414,30 @@
    "touch_sent": true,
    "touch_t": 1794395400,
    "touched": true,
+   "win": []
+  },
+  {
+   "bottom": 4048.300048828125,
+   "close_price": 4042.800048828125,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1794405600,
+   "hunt_level": 4073.699951171875,
+   "hunt_t": 1794373200,
+   "id": "XAUUSD-S-1794405600",
+   "late": false,
+   "level": 4048.300048828125,
+   "msg_id": 65,
+   "mss_swing_t": 1794369600,
+   "notified": true,
+   "src": "yahoo:GC=F",
+   "sweep_extreme": 4074.699951171875,
+   "sweep_t": 1794380400,
+   "symbol": "XAUUSD",
+   "tf": "1H",
+   "top": 4073.699951171875,
+   "touch_t": null,
+   "touched": false,
    "win": []
   }
  ]
