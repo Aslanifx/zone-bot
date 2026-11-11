@@ -9,90 +9,40 @@
    "last_1h_close": 1794387600
   },
   "EURUSD": {
-   "last_1h_close": 1794387600,
+   "last_1h_close": 1794391200,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1794387600,
+   "last_1h_close": 1794391200,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1794387600,
+   "last_1h_close": 1794391200,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1794387600,
+   "last_1h_close": 1794391200,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1794387600,
+   "last_1h_close": 1794391200,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1794387600,
+   "last_1h_close": 1794391200,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1794387600,
+   "last_1h_close": 1794391200,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1794387600,
+   "last_1h_close": 1794391200,
    "src": "GC=F"
   }
  },
  "version": 1,
  "zones": [
-  {
-   "bottom": 26903.0,
-   "close_price": 27159.75,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1793959200,
-   "hunt_level": 26903.0,
-   "hunt_t": 1793941200,
-   "id": "NAS100-B-1793959200",
-   "late": false,
-   "level": 27159.25,
-   "msg_id": 29,
-   "mss_swing_t": 1793930400,
-   "notified": true,
-   "src": "yahoo:NQ=F",
-   "sweep_extreme": 26805.0,
-   "sweep_t": 1793948400,
-   "symbol": "NAS100",
-   "tf": "1H",
-   "top": 27159.25,
-   "touch_sent": true,
-   "touch_t": 1793959200,
-   "touched": true,
-   "win": []
-  },
-  {
-   "bottom": 157.7239990234375,
-   "close_price": 158.33099365234375,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1793959200,
-   "hunt_level": 157.7239990234375,
-   "hunt_t": 1793934000,
-   "id": "USDJPY-B-1793959200",
-   "late": false,
-   "level": 158.1649932861328,
-   "msg_id": 30,
-   "mss_swing_t": 1793944800,
-   "notified": true,
-   "src": "yahoo:JPY=X",
-   "sweep_extreme": 157.68600463867188,
-   "sweep_t": 1793948400,
-   "symbol": "USDJPY",
-   "tf": "1H",
-   "top": 158.1649932861328,
-   "touch_sent": true,
-   "touch_t": 1793978700,
-   "touched": true,
-   "win": []
-  },
   {
    "bottom": 75843.29,
    "close_price": 75798.2,
@@ -464,6 +414,30 @@
    "touch_sent": true,
    "touch_t": 1794384000,
    "touched": true,
+   "win": []
+  },
+  {
+   "bottom": 52358.0,
+   "close_price": 52320.0,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1794391200,
+   "hunt_level": 52475.0,
+   "hunt_t": 1794355200,
+   "id": "US30-S-1794391200",
+   "late": false,
+   "level": 52358.0,
+   "msg_id": 63,
+   "mss_swing_t": 1794358800,
+   "notified": true,
+   "src": "yahoo:YM=F",
+   "sweep_extreme": 52483.0,
+   "sweep_t": 1794373200,
+   "symbol": "US30",
+   "tf": "1H",
+   "top": 52475.0,
+   "touch_t": null,
+   "touched": false,
    "win": []
   }
  ]
