@@ -534,8 +534,9 @@
    "symbol": "SPX500",
    "tf": "1H",
    "top": 7620.5,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1794494100,
+   "touched": true,
    "win": []
   }
  ]
