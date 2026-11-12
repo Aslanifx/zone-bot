@@ -509,8 +509,9 @@
    "symbol": "US30",
    "tf": "1H",
    "top": 52696.0,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1794492000,
+   "touched": true,
    "win": []
   },
   {
