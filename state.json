@@ -9,35 +9,35 @@
    "last_1h_close": 1794488400
   },
   "EURUSD": {
-   "last_1h_close": 1794488400,
+   "last_1h_close": 1794492000,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1794488400,
+   "last_1h_close": 1794492000,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1794488400,
+   "last_1h_close": 1794492000,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1794488400,
+   "last_1h_close": 1794492000,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1794488400,
+   "last_1h_close": 1794492000,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1794488400,
+   "last_1h_close": 1794492000,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1794488400,
+   "last_1h_close": 1794492000,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1794488400,
+   "last_1h_close": 1794492000,
    "src": "GC=F"
   }
  },
@@ -485,6 +485,54 @@
    "symbol": "ETHUSD",
    "tf": "1H",
    "top": 2051.1,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "bottom": 52511.0,
+   "close_price": 52424.0,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1794492000,
+   "hunt_level": 52696.0,
+   "hunt_t": 1794452400,
+   "id": "US30-S-1794492000",
+   "late": false,
+   "level": 52511.0,
+   "msg_id": 75,
+   "mss_swing_t": 1794466800,
+   "notified": true,
+   "src": "yahoo:YM=F",
+   "sweep_extreme": 52751.0,
+   "sweep_t": 1794488400,
+   "symbol": "US30",
+   "tf": "1H",
+   "top": 52696.0,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "bottom": 7601.5,
+   "close_price": 7587.75,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1794492000,
+   "hunt_level": 7620.5,
+   "hunt_t": 1794474000,
+   "id": "SPX500-S-1794492000",
+   "late": false,
+   "level": 7601.5,
+   "msg_id": 76,
+   "mss_swing_t": 1794466800,
+   "notified": true,
+   "src": "yahoo:ES=F",
+   "sweep_extreme": 7626.0,
+   "sweep_t": 1794488400,
+   "symbol": "SPX500",
+   "tf": "1H",
+   "top": 7620.5,
    "touch_t": null,
    "touched": false,
    "win": []
