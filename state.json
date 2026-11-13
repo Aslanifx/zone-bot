@@ -610,8 +610,9 @@
    "symbol": "EURUSD",
    "tf": "1H",
    "top": 1.1066844463348389,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1794554129,
+   "touched": true,
    "win": []
   },
   {
