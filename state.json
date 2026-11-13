@@ -9,16 +9,16 @@
    "last_1h_close": 1794607200
   },
   "EURUSD": {
-   "last_1h_close": 1794607200,
+   "last_1h_close": 1794610800,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1794607200,
+   "last_1h_close": 1794610800,
    "src": "GBPUSD=X"
   },
   "GER40": {
    "last_1h_close": 1794591000,
-   "next_1h_try": 1794610812,
+   "next_1h_try": 1794614412,
    "src": "^GDAXI"
   },
   "NAS100": {
