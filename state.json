@@ -9,36 +9,36 @@
    "last_1h_close": 1794549600
   },
   "EURUSD": {
-   "last_1h_close": 1794549600,
+   "last_1h_close": 1794553200,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1794549600,
+   "last_1h_close": 1794553200,
    "src": "GBPUSD=X"
   },
   "GER40": {
    "last_1h_close": 1794504600,
-   "next_1h_try": 1794553212,
+   "next_1h_try": 1794556812,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1794549600,
+   "last_1h_close": 1794553200,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1794549600,
+   "last_1h_close": 1794553200,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1794549600,
+   "last_1h_close": 1794553200,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1794549600,
+   "last_1h_close": 1794553200,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1794549600,
+   "last_1h_close": 1794553200,
    "src": "GC=F"
   }
  },
@@ -588,6 +588,54 @@
    "touch_sent": true,
    "touch_t": 1794525900,
    "touched": true,
+   "win": []
+  },
+  {
+   "bottom": 1.1059499979019165,
+   "close_price": 1.107051968574524,
+   "dir": "buy",
+   "expired": false,
+   "formed_close": 1794553200,
+   "hunt_level": 1.1059499979019165,
+   "hunt_t": 1794542400,
+   "id": "EURUSD-B-1794553200",
+   "late": false,
+   "level": 1.1066844463348389,
+   "msg_id": 83,
+   "mss_swing_t": 1794538800,
+   "notified": true,
+   "src": "yahoo:EURUSD=X",
+   "sweep_extreme": 1.1058276891708374,
+   "sweep_t": 1794549600,
+   "symbol": "EURUSD",
+   "tf": "1H",
+   "top": 1.1066844463348389,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "bottom": 159.78199768066406,
+   "close_price": 159.7740020751953,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1794553200,
+   "hunt_level": 159.96400451660156,
+   "hunt_t": 1794538800,
+   "id": "USDJPY-S-1794553200",
+   "late": false,
+   "level": 159.78199768066406,
+   "msg_id": 84,
+   "mss_swing_t": 1794528000,
+   "notified": true,
+   "src": "yahoo:JPY=X",
+   "sweep_extreme": 160.0279998779297,
+   "sweep_t": 1794546000,
+   "symbol": "USDJPY",
+   "tf": "1H",
+   "top": 159.96400451660156,
+   "touch_t": null,
+   "touched": false,
    "win": []
   }
  ]
