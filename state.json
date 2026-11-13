@@ -9,27 +9,27 @@
    "last_1h_close": 1794578400
   },
   "EURUSD": {
-   "last_1h_close": 1794578400,
+   "last_1h_close": 1794582000,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1794578400,
+   "last_1h_close": 1794582000,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1794578400,
+   "last_1h_close": 1794582000,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1794578400,
+   "last_1h_close": 1794582000,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1794578400,
+   "last_1h_close": 1794582000,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1794578400,
+   "last_1h_close": 1794582000,
    "src": "YM=F"
   },
   "USDJPY": {
@@ -37,7 +37,7 @@
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1794578400,
+   "last_1h_close": 1794582000,
    "src": "GC=F"
   }
  },
@@ -662,6 +662,54 @@
    "touch_sent": true,
    "touch_t": 1794569100,
    "touched": true,
+   "win": []
+  },
+  {
+   "bottom": 28243.25,
+   "close_price": 28128.0,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1794582000,
+   "hunt_level": 28582.25,
+   "hunt_t": 1794535200,
+   "id": "NAS100-S-1794582000",
+   "late": false,
+   "level": 28243.25,
+   "msg_id": 89,
+   "mss_swing_t": 1794556800,
+   "notified": true,
+   "src": "yahoo:NQ=F",
+   "sweep_extreme": 28583.75,
+   "sweep_t": 1794574800,
+   "symbol": "NAS100",
+   "tf": "1H",
+   "top": 28582.25,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "bottom": 7598.5,
+   "close_price": 7589.5,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1794582000,
+   "hunt_level": 7649.75,
+   "hunt_t": 1794528000,
+   "id": "SPX500-S-1794582000",
+   "late": false,
+   "level": 7598.5,
+   "msg_id": 90,
+   "mss_swing_t": 1794556800,
+   "notified": true,
+   "src": "yahoo:ES=F",
+   "sweep_extreme": 7669.25,
+   "sweep_t": 1794574800,
+   "symbol": "SPX500",
+   "tf": "1H",
+   "top": 7649.75,
+   "touch_t": null,
+   "touched": false,
    "win": []
   }
  ]
