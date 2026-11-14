@@ -6,21 +6,21 @@
    "last_1h_close": 1794682800
   },
   "ETHUSD": {
-   "last_1h_close": 1794682800
+   "last_1h_close": 1794686400
   },
   "EURUSD": {
    "last_1h_close": 1794610800,
-   "next_1h_try": 1794686412,
+   "next_1h_try": 1794690012,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
    "last_1h_close": 1794610800,
-   "next_1h_try": 1794686412,
+   "next_1h_try": 1794690012,
    "src": "GBPUSD=X"
   },
   "GER40": {
    "last_1h_close": 1794591000,
-   "next_1h_try": 1794686412,
+   "next_1h_try": 1794690012,
    "src": "^GDAXI"
   },
   "NAS100": {
@@ -29,7 +29,7 @@
     "warned": true
    },
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794686412,
+   "next_1h_try": 1794690012,
    "next_5m_try": 1794628834,
    "src": "NQ=F"
   },
@@ -39,7 +39,7 @@
     "warned": true
    },
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794686412,
+   "next_1h_try": 1794690012,
    "next_5m_try": 1794628834,
    "src": "ES=F"
   },
@@ -49,13 +49,13 @@
     "warned": true
    },
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794686412,
+   "next_1h_try": 1794690012,
    "next_5m_try": 1794628834,
    "src": "YM=F"
   },
   "USDJPY": {
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794686412,
+   "next_1h_try": 1794690012,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -64,7 +64,7 @@
     "warned": true
    },
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794686412,
+   "next_1h_try": 1794690012,
    "next_5m_try": 1794628834,
    "src": "GC=F"
   }
@@ -117,31 +117,6 @@
    "top": 27425.0,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "bottom": 4092.300048828125,
-   "close_price": 4142.10009765625,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1794254400,
-   "hunt_level": 4092.300048828125,
-   "hunt_t": 1794207600,
-   "id": "XAUUSD-B-1794254400",
-   "late": false,
-   "level": 4141.2998046875,
-   "msg_id": 53,
-   "mss_swing_t": 1794196800,
-   "notified": true,
-   "src": "yahoo:GC=F",
-   "sweep_extreme": 4074.89990234375,
-   "sweep_t": 1794232800,
-   "symbol": "XAUUSD",
-   "tf": "1H",
-   "top": 4141.2998046875,
-   "touch_sent": true,
-   "touch_t": 1794269700,
-   "touched": true,
    "win": []
   },
   {
