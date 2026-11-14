@@ -26,19 +26,19 @@
   "NAS100": {
    "last_1h_close": 1794610799,
    "next_1h_try": 1794628812,
-   "next_5m_try": 1794625848,
+   "next_5m_try": 1794626732,
    "src": "NQ=F"
   },
   "SPX500": {
    "last_1h_close": 1794610799,
    "next_1h_try": 1794628812,
-   "next_5m_try": 1794625848,
+   "next_5m_try": 1794626732,
    "src": "ES=F"
   },
   "US30": {
    "last_1h_close": 1794610798,
    "next_1h_try": 1794628812,
-   "next_5m_try": 1794625848,
+   "next_5m_try": 1794626732,
    "src": "YM=F"
   },
   "USDJPY": {
@@ -49,7 +49,7 @@
   "XAUUSD": {
    "last_1h_close": 1794610799,
    "next_1h_try": 1794628812,
-   "next_5m_try": 1794625848,
+   "next_5m_try": 1794626732,
    "src": "GC=F"
   }
  },
