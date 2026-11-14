@@ -10,17 +10,17 @@
   },
   "EURUSD": {
    "last_1h_close": 1794610800,
-   "next_1h_try": 1794643212,
+   "next_1h_try": 1794646812,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
    "last_1h_close": 1794610800,
-   "next_1h_try": 1794643212,
+   "next_1h_try": 1794646812,
    "src": "GBPUSD=X"
   },
   "GER40": {
    "last_1h_close": 1794591000,
-   "next_1h_try": 1794643212,
+   "next_1h_try": 1794646812,
    "src": "^GDAXI"
   },
   "NAS100": {
@@ -29,7 +29,7 @@
     "warned": true
    },
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794643212,
+   "next_1h_try": 1794646812,
    "next_5m_try": 1794628834,
    "src": "NQ=F"
   },
@@ -39,7 +39,7 @@
     "warned": true
    },
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794643212,
+   "next_1h_try": 1794646812,
    "next_5m_try": 1794628834,
    "src": "ES=F"
   },
@@ -49,13 +49,13 @@
     "warned": true
    },
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794643212,
+   "next_1h_try": 1794646812,
    "next_5m_try": 1794628834,
    "src": "YM=F"
   },
   "USDJPY": {
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794643212,
+   "next_1h_try": 1794646812,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -64,63 +64,13 @@
     "warned": true
    },
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794643212,
+   "next_1h_try": 1794646812,
    "next_5m_try": 1794628834,
    "src": "GC=F"
   }
  },
  "version": 1,
  "zones": [
-  {
-   "bottom": 26882.25,
-   "close_price": 26849.0,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1794211200,
-   "hunt_level": 27258.0,
-   "hunt_t": 1793995200,
-   "id": "NAS100-S-1794211200",
-   "late": false,
-   "level": 26882.25,
-   "msg_id": 46,
-   "mss_swing_t": 1794182400,
-   "notified": true,
-   "src": "yahoo:NQ=F",
-   "sweep_extreme": 27319.0,
-   "sweep_t": 1794189600,
-   "symbol": "NAS100",
-   "tf": "1H",
-   "top": 27258.0,
-   "touch_sent": true,
-   "touch_t": 1794211200,
-   "touched": true,
-   "win": []
-  },
-  {
-   "bottom": 157.9929962158203,
-   "close_price": 157.95599365234375,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1794211200,
-   "hunt_level": 158.54400634765625,
-   "hunt_t": 1793991600,
-   "id": "USDJPY-S-1794211200",
-   "late": false,
-   "level": 157.9929962158203,
-   "msg_id": 47,
-   "mss_swing_t": 1793984400,
-   "notified": true,
-   "src": "yahoo:JPY=X",
-   "sweep_extreme": 158.5679931640625,
-   "sweep_t": 1793998800,
-   "symbol": "USDJPY",
-   "tf": "1H",
-   "top": 158.54400634765625,
-   "touch_sent": true,
-   "touch_t": 1794213000,
-   "touched": true,
-   "win": []
-  },
   {
    "bottom": 51496.0,
    "close_price": 51813.0,
