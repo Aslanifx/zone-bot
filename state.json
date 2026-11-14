@@ -25,7 +25,8 @@
   },
   "NAS100": {
    "fail_5m": {
-    "first": 1794628852
+    "first": 1794628852,
+    "warned": true
    },
    "last_1h_close": 1794607200,
    "next_1h_try": 1794636012,
@@ -34,7 +35,8 @@
   },
   "SPX500": {
    "fail_5m": {
-    "first": 1794628852
+    "first": 1794628852,
+    "warned": true
    },
    "last_1h_close": 1794607200,
    "next_1h_try": 1794636012,
@@ -43,7 +45,8 @@
   },
   "US30": {
    "fail_5m": {
-    "first": 1794628852
+    "first": 1794628852,
+    "warned": true
    },
    "last_1h_close": 1794607200,
    "next_1h_try": 1794636012,
@@ -57,7 +60,8 @@
   },
   "XAUUSD": {
    "fail_5m": {
-    "first": 1794628852
+    "first": 1794628852,
+    "warned": true
    },
    "last_1h_close": 1794607200,
    "next_1h_try": 1794636012,
