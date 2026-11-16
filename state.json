@@ -6,7 +6,7 @@
    "last_1h_close": 1794841200
   },
   "ETHUSD": {
-   "last_1h_close": 1794837600
+   "last_1h_close": 1794841200
   },
   "EURUSD": {
    "last_1h_close": 1794841200,
@@ -609,6 +609,30 @@
    "symbol": "BTCUSD",
    "tf": "1H",
    "top": 64736.26,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "bottom": 1789.5,
+   "close_price": 1844.38,
+   "dir": "buy",
+   "expired": false,
+   "formed_close": 1794841200,
+   "hunt_level": 1789.5,
+   "hunt_t": 1794819600,
+   "id": "ETHUSD-B-1794841200",
+   "late": false,
+   "level": 1812.9,
+   "msg_id": 112,
+   "mss_swing_t": 1794826800,
+   "notified": true,
+   "src": "coinbase:ETH-USD",
+   "sweep_extreme": 1785.09,
+   "sweep_t": 1794830400,
+   "symbol": "ETHUSD",
+   "tf": "1H",
+   "top": 1812.9,
    "touch_t": null,
    "touched": false,
    "win": []
