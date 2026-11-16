@@ -609,8 +609,9 @@
    "symbol": "BTCUSD",
    "tf": "1H",
    "top": 64736.26,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1794841200,
+   "touched": true,
    "win": []
   },
   {
@@ -633,8 +634,9 @@
    "symbol": "ETHUSD",
    "tf": "1H",
    "top": 1812.9,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1794841500,
+   "touched": true,
    "win": []
   }
  ]
