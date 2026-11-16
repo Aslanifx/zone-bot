@@ -9,28 +9,28 @@
    "last_1h_close": 1794812400
   },
   "EURUSD": {
-   "last_1h_close": 1794812400,
+   "last_1h_close": 1794816000,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1794812400,
+   "last_1h_close": 1794816000,
    "src": "GBPUSD=X"
   },
   "GER40": {
    "last_1h_close": 1794591000,
-   "next_1h_try": 1794816012,
+   "next_1h_try": 1794819612,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1794812400,
+   "last_1h_close": 1794816000,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1794812400,
+   "last_1h_close": 1794816000,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1794812400,
+   "last_1h_close": 1794816000,
    "src": "YM=F"
   },
   "USDJPY": {
@@ -38,7 +38,7 @@
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1794812400,
+   "last_1h_close": 1794816000,
    "src": "GC=F"
   }
  },
@@ -90,31 +90,6 @@
    "top": 27425.0,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "bottom": 73219.35,
-   "close_price": 73992.28,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1794384000,
-   "hunt_level": 73219.35,
-   "hunt_t": 1794340800,
-   "id": "BTCUSD-B-1794384000",
-   "late": false,
-   "level": 73970.2,
-   "msg_id": 61,
-   "mss_swing_t": 1794344400,
-   "notified": true,
-   "src": "coinbase:BTC-USD",
-   "sweep_extreme": 73110.0,
-   "sweep_t": 1794362400,
-   "symbol": "BTCUSD",
-   "tf": "1H",
-   "top": 73970.2,
-   "touch_sent": true,
-   "touch_t": 1794384000,
-   "touched": true,
    "win": []
   },
   {
