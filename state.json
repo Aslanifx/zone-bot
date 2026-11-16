@@ -1,5 +1,5 @@
 {
- "heartbeat": "2026-11-15",
+ "heartbeat": "2026-11-16",
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
@@ -10,42 +10,38 @@
   },
   "EURUSD": {
    "last_1h_close": 1794610800,
-   "next_1h_try": 1794787212,
+   "next_1h_try": 1794790812,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
    "last_1h_close": 1794610800,
-   "next_1h_try": 1794787212,
+   "next_1h_try": 1794790812,
    "src": "GBPUSD=X"
   },
   "GER40": {
    "last_1h_close": 1794591000,
-   "next_1h_try": 1794787212,
+   "next_1h_try": 1794790812,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1794610799,
-   "next_1h_try": 1794787212,
+   "last_1h_close": 1794787200,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1794610799,
-   "next_1h_try": 1794787212,
+   "last_1h_close": 1794787200,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1794610798,
-   "next_1h_try": 1794787212,
+   "last_1h_close": 1794787200,
    "src": "YM=F"
   },
   "USDJPY": {
    "last_1h_close": 1794607200,
-   "next_1h_try": 1794787212,
+   "next_1h_try": 1794790812,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1794610799,
-   "next_1h_try": 1794787212,
+   "last_1h_close": 1794787200,
    "src": "GC=F"
   }
  },
