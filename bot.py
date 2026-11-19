@@ -3,12 +3,13 @@
 """
 ZONE ALERT BOT
 ==============
-Signal 1 (1H):  liquidity swept by WICK, then MSS by BODY close  ->  chart + caption
-Signal 2 (5m):  first touch of an unused zone                    ->  reply to Signal 1
+Signal 1 (1H):  liquidity (an old swing high/low) hunted by a WICK, then MSS by BODY close  ->  chart + caption
+Signal 2 (5m):  first touch of an unused zone                                              ->  reply to Signal 1
 
 Usage
   python bot.py run     normal run (the scheduler calls this)
   python bot.py test    sends a test report + sample chart to Telegram, changes nothing
+  python bot.py scan ETHUSD 30   shows the last 30 days of zones + near-misses, changes nothing
 """
 import io
 import json
@@ -40,23 +41,26 @@ except Exception:  # pragma: no cover
 TIMEZONE = "Asia/Tehran"            # time zone used in captions and on the chart
 STATE_FILE = os.environ.get("STATE_FILE", "state.json")
 
-# --- limits that the setup description does not fix (safe defaults) --
-SWING_LOOKBACK = 30          # hunted swing may be at most N 1H candles before the sweep candle
-MAX_BARS_SWEEP_TO_MSS = 12   # the MSS candle must come within N candles after the sweep candle
+# --- settings of the setup logic -------------------------------------
 ZONE_MAX_AGE_DAYS = 14       # an untouched zone is dropped silently after N days
+TOL_REL = 0.0001             # 0.01% tolerance for body/close comparisons (feeds differ by tiny amounts)
+BACKFILL_DAYS = 7            # at the first run: zones of the last N days that are still unused are announced
+MAX_BACKFILL_PER_SYMBOL = 5  # ...but at most this many per symbol (the newest ones)
 
 # --- technical settings ------------------------------------------------
-CHART_BARS = 72              # candles shown on the chart
+CHART_BARS = 72              # minimum number of candles shown on the chart
+CHART_BARS_MAX = 200         # maximum (the chart grows to show an old hunted swing)
 MIN_1H_BARS = 60             # minimum history needed
 CLOSE_DELAY_SEC = 12         # wait a few seconds after the hour before reading the candle
 CLOSED_FALLBACK_SEC = 20 * 60  # last candle without a successor counts as closed after this
-MAX_CATCHUP_BARS = 24        # after downtime: look back at most N closed candles
-MAX_LATE_ANNOUNCE_SEC = 24 * 3600  # zones found later than this after formation are not announced
+MAX_CATCHUP_BARS = 168       # after downtime: look back at most N closed candles (1 week)
+MAX_LATE_ANNOUNCE_SEC = 7 * 86400  # zones found later than this after formation are not announced
 LATE_TOUCH_SEC = 10 * 60     # touch alert older than this is marked "late"
 MAX_LATE_TOUCH_SEC = 6 * 3600  # touch older than this is marked as used, without an alert
 RUN_DEADLINE_SEC = 240       # a run never works longer than this
 HEALTH_WARN_AFTER_SEC = 90 * 60  # warn if a symbol had no data for this long
 YAHOO_PAUSE_SEC = 0.35       # polite pause between Yahoo requests
+ALGO_VERSION = 3             # bump = the next run re-reads the last week once (backfill)
 FIVE_MIN_WINDOW_SEC = 6 * 3600  # 5m data requested on every run (older touches are caught by the 1H net)
 
 # One block per symbol:  name shown in Telegram | hashtags | decimals | data sources
@@ -282,7 +286,7 @@ def fetch_coinbase(product, gran):
 def fetch_one(kind, code, tf, rng):
     if kind == "yahoo":
         return fetch_yahoo(code, "1h" if tf == "1H" else "5m",
-                           "1mo" if tf == "1H" else int(rng))
+                           (rng if isinstance(rng, str) and rng else "1mo") if tf == "1H" else int(rng))
     if kind == "kraken":
         return fetch_kraken(code, 60 if tf == "1H" else 5)
     if kind == "coinbase":
@@ -333,92 +337,130 @@ def mirror(cs):
     return [Candle(c.t, -c.o, -c.l, -c.h, -c.c) for c in cs]
 
 
-def is_swing_high(cs, i, hi):
-    """3-candle swing high at i (confirmed by candle i+1, which must be <= hi)."""
-    return i >= 1 and i + 1 <= hi and cs[i].h > cs[i - 1].h and cs[i].h >= cs[i + 1].h
+MODE_TEXT = {"N": "nearest swing before the hunt",
+             "L": "structural swing of the leg",
+             "O": "swing that made the hunted swing"}
 
 
-def is_swing_low(cs, i, hi):
-    return i >= 1 and i + 1 <= hi and cs[i].l < cs[i - 1].l and cs[i].l <= cs[i + 1].l
-
-
-def find_bull_setup(cs, m):
+def detect_bull(cs, first_m=0, first_pierce=True, strict_first=True, tol_rel=None):
     """
-    BUY zone completed by candle m (the newest closed candle).
+    BUY zones in the candle list cs (oldest -> newest).  One pass, no look-ahead.
 
-      1. a swing low is swept by a WICK (price trades below it, the candle body stays above it)
-      2. the MSS level = the structural swing high of that leg
-           (highest swing high after the hunted swing low; if none, the swing high right
-            before the hunted swing low)
-      3. the FIRST candle that trades above the MSS level must close ABOVE it with its body
-         (wick first, body later = invalid)
+      HUNT         a swing low (3 candles) is taken by a WICK: some candle trades below it but its body
+                   stays above it.  The swing can be arbitrarily old.
+      MSS LEVEL    a swing HIGH that must be broken by a candle BODY.  Three levels are accepted:
+                     N  the nearest swing high before the sweep candle
+                     L  the structural high of the leg (highest swing high between the hunted low and the sweep)
+                     O  the swing high that made the hunted low (nearest swing high before the hunted low)
+      FIRST TOUCH  the first candle that trades above the MSS level must close above it.
+                   A wick-only first touch kills that level for good.
+      HOLD         after the sweep no candle may close back below the hunted low.
+      There is no limit on the time between the hunt and the MSS.
 
-    Only candles cs[0..m] are used. Returns a dict or None.
+    Returns one dict per zone candle m (only m >= first_m).  The optional arguments are used only by
+    the 'scan' mode to find near-misses.
     """
-    M = cs[m]
-    for s in range(m, max(2, m - MAX_BARS_SWEEP_TO_MSS) - 1, -1):
-        S = cs[s]
-        pool = []
-        for a in range(max(1, s - SWING_LOOKBACK), s):
-            if not is_swing_low(cs, a, s):
-                continue
-            lvl = cs[a].l
-            if not S.l < lvl:                       # S must trade below the swing low
-                continue
-            if min(S.o, S.c) < lvl:                 # ...but its body must stay above it
-                continue
-            if any(cs[k].l < lvl for k in range(a + 1, s)):
-                continue                            # S must be the FIRST candle to take it
-            pool.append(a)
-        if not pool:
-            continue
-        a0 = pool[0]                                # oldest swept swing low
-        hunt_a = min(pool, key=lambda k: (cs[k].l, k))
-        hunt_level = cs[hunt_a].l                   # deepest swept swing low
+    tol_rel = TOL_REL if tol_rel is None else tol_rel
+    n = len(cs)
+    swing_h = []              # indices of confirmed swing highs
+    active = []               # [index, level] of swing lows that have not been taken yet
+    pending = []              # MSS levels waiting for their first touch
+    out = []
+    for k in range(n):
+        c = cs[k]
+        if k >= 2:            # swing at k-1 is confirmed by candle k
+            i = k - 1
+            if cs[i].h > cs[i - 1].h and cs[i].h >= c.h:
+                swing_h.append(i)
+            if cs[i].l < cs[i - 1].l and cs[i].l <= c.l:
+                active.append([i, cs[i].l])
+        # ---- swing lows taken by this candle
+        pool, keep = [], []
+        for item in active:
+            a, lvl = item
+            if c.l < lvl:
+                if min(c.o, c.c) >= lvl - abs(lvl) * tol_rel:
+                    pool.append(a)                    # wick only: liquidity hunted
+                    if not first_pierce:
+                        keep.append(item)
+                # else: the body went through it -> that swing is broken, forget it
+            else:
+                keep.append(item)
+        active = keep
+        # ---- a hunt creates the MSS levels to watch
+        if pool:
+            hunt_a = min(pool, key=lambda x: (cs[x].l, x))
+            hunt_level = cs[hunt_a].l                 # the deepest hunted swing low
+            a0 = min(pool)
+            cand = {}
+            if swing_h:
+                cand.setdefault(swing_h[-1], set()).add("N")
+            after = [j for j in swing_h if j > a0]
+            if after:
+                cand.setdefault(max(after, key=lambda x: (cs[x].h, -x)), set()).add("L")
+            else:
+                before = [j for j in swing_h if j < a0]
+                if before:
+                    cand.setdefault(before[-1], set()).add("L")
+            for a in pool:
+                before = [j for j in swing_h if j < a]
+                if before:
+                    cand.setdefault(before[-1], set()).add("O")
+            for j, modes in cand.items():
+                L = cs[j].h
+                if L <= hunt_level:
+                    continue
+                if any(cs[x].h > L for x in range(j + 1, k)):
+                    continue                          # that level was already touched before the hunt
+                pending.append({"s": k, "a": hunt_a, "hl": hunt_level, "j": j, "L": L,
+                                "modes": modes, "ft": None, "ext": c.l})
+        # ---- watch the MSS levels
+        if pending:
+            fired, still = [], []
+            for p in pending:
+                if k > p["s"] and c.c < p["hl"] - abs(p["hl"]) * tol_rel:
+                    continue                          # price closed back below the hunted low
+                if c.h > p["L"]:                      # touch
+                    if p["ft"] is None:
+                        p["ft"] = k
+                    if c.c > p["L"] - abs(p["L"]) * tol_rel:
+                        fired.append(p)               # body closed beyond the level
+                        continue
+                    if strict_first:
+                        continue                      # first touch was wick-only -> dead
+                still.append(p)
+            pending = still
+            if fired and k >= first_m:
+                best = max(p["s"] for p in fired)
+                grp = [p for p in fired if p["s"] == best]
+                rep = max(grp, key=lambda p: (p["L"], -p["j"]))      # farthest level = biggest zone
+                out.append(dict(dir="buy", m=k, s=rep["s"], a=rep["a"], j=rep["j"], level=rep["L"],
+                                hunt_level=rep["hl"], top=rep["L"], bottom=rep["hl"],
+                                sweep_extreme=rep["ext"], first_touch=rep["ft"],
+                                modes=sorted(set().union(*[p["modes"] for p in grp]))))
+    return out
 
-        highs = [j for j in range(a0 + 1, s) if is_swing_high(cs, j, s)]
-        if highs:
-            j = max(highs, key=lambda k: (cs[k].h, -k))
-        else:
-            j = None
-            for k in range(a0 - 1, 0, -1):
-                if is_swing_high(cs, k, s):
-                    j = k
-                    break
-            if j is None:
-                continue
-        L = cs[j].h                                 # MSS level
-        if any(cs[k].h > L for k in range(j + 1, s)):
-            continue                                # it was already touched before the sweep
-        if not L > hunt_level:
-            continue
 
-        first = next((k for k in range(s, m + 1) if cs[k].h > L), None)
-        if first != m:                              # not the first touch of the MSS level
-            continue
-        if not M.c > L:                             # first touch by wick only -> invalid
-            continue
-        if any(cs[k].c < hunt_level for k in range(s + 1, m + 1)):
-            continue                                # price closed back below the hunted low
-        return dict(dir="buy", m=m, s=s, a=hunt_a, j=j, level=L, hunt_level=hunt_level,
-                    top=L, bottom=hunt_level, sweep_extreme=S.l)
-    return None
-
-
-def find_setup(cs, m, direction):
+def detect_zones(cs, direction, **kw):
     """direction 'buy' or 'sell' (sell = mirror image of buy)."""
     if direction == "buy":
-        return find_bull_setup(cs, m)
-    r = find_bull_setup(mirror(cs[:m + 1]), m)
-    if not r:
-        return None
-    r = dict(r)
-    r["dir"] = "sell"
-    r["level"] = -r["level"]
-    r["hunt_level"] = -r["hunt_level"]
-    r["top"], r["bottom"] = -r["bottom"], -r["top"]
-    r["sweep_extreme"] = -r["sweep_extreme"]
-    return r
+        return detect_bull(cs, **kw)
+    out = []
+    for r in detect_bull(mirror(cs), **kw):
+        r = dict(r)
+        r["dir"] = "sell"
+        r["level"] = -r["level"]
+        r["hunt_level"] = -r["hunt_level"]
+        r["top"], r["bottom"] = -r["bottom"], -r["top"]
+        r["sweep_extreme"] = -r["sweep_extreme"]
+        out.append(r)
+    return out
+
+
+def find_setup(cs, m, direction, **kw):
+    """The zone completed exactly by candle m (uses cs[:m+1] only), or None."""
+    res = detect_zones(cs[:m + 1], direction, first_m=m, **kw)
+    return res[-1] if res and res[-1]["m"] == m else None
 
 
 def touched(z, c):
@@ -426,10 +468,13 @@ def touched(z, c):
     return c.l <= z["level"] if z["dir"] == "buy" else c.h >= z["level"]
 
 
-def make_zone(sym, setup, cs, src):
+def make_zone(sym, setup, cs, src, bars=None):
     m = setup["m"]
     M = cs[m]
     close_t = M.t + 3600
+    if not bars:      # show enough candles to include the hunted swing (even if it is a week old)
+        start = min(setup["a"], setup["j"]) - 8
+        bars = min(CHART_BARS_MAX, max(CHART_BARS, m - start + 1))
     return {
         "id": f"{sym['name']}-{'B' if setup['dir'] == 'buy' else 'S'}-{close_t}",
         "symbol": sym["name"], "dir": setup["dir"], "tf": "1H",
@@ -438,9 +483,10 @@ def make_zone(sym, setup, cs, src):
         "top": setup["top"], "bottom": setup["bottom"],
         "sweep_t": cs[setup["s"]].t, "sweep_extreme": setup["sweep_extreme"],
         "hunt_t": cs[setup["a"]].t, "mss_swing_t": cs[setup["j"]].t,
-        "src": src, "notified": False, "msg_id": None, "late": False,
+        "modes": list(setup.get("modes", [])),
+        "src": src, "notified": False, "msg_id": None, "late": False, "backfill": False,
         "touched": False, "touch_t": None, "expired": False,
-        "win": [[c.t, c.o, c.h, c.l, c.c] for c in cs[max(0, m - CHART_BARS + 1): m + 1]],
+        "win": [[c.t, c.o, c.h, c.l, c.c] for c in cs[max(0, m - bars + 1): m + 1]],
     }
 
 
@@ -506,7 +552,7 @@ def render_chart(z, sym):
 
     img = Image.new("RGB", (W * SS, H * SS), BG)
     d = ImageDraw.Draw(img, "RGBA")
-    Lx, Rx, Ty, By = 26 * SS, (W - 162) * SS, 86 * SS, (H - 56) * SS
+    Lx, Rx, Ty, By = 26 * SS, (W - 180) * SS, 86 * SS, (H - 56) * SS
     pad_slots = 12
     sw = (Rx - Lx) / (n + pad_slots)
 
@@ -543,9 +589,10 @@ def render_chart(z, sym):
 
     # zone fill + lines (drawn under the candles)
     idx = {c.t: i for i, c in enumerate(cs)}
-    starts = [idx[t] for t in (z["hunt_t"], z["mss_swing_t"]) if t in idx]
-    i0 = min(starts) if starts else 0
-    zx0 = X(i0) - sw * 0.5
+    i_h, i_m = idx.get(z["hunt_t"]), idx.get(z["mss_swing_t"])
+    x_h = X(i_h) - sw * 0.5 if i_h is not None else Lx          # line 1 starts at the hunted swing
+    x_m = X(i_m) - sw * 0.5 if i_m is not None else Lx          # line 2 starts at the swing that gets broken
+    zx0 = max(x_h, x_m)
     d.rectangle([zx0, Y(z["top"]), Rx, Y(z["bottom"])], fill=AMB + (34,))
 
     # candles
@@ -560,18 +607,18 @@ def render_chart(z, sym):
         d.rectangle([x - bw / 2, yt, x + bw / 2, yb], fill=col)
 
     # zone lines: MSS level (alert edge) solid, hunt level dashed
-    def hline(price, width, dashed):
+    def hline(price, width, dashed, x_start):
         y = Y(price)
         if not dashed:
-            d.line([(zx0, y), (Rx, y)], fill=AMB, width=width)
+            d.line([(x_start, y), (Rx, y)], fill=AMB, width=width)
             return
-        x = zx0
+        x = x_start
         while x < Rx:
             d.line([(x, y), (min(x + 14 * SS, Rx), y)], fill=AMB + (200,), width=width)
             x += 22 * SS
 
-    hline(z["level"], int(3 * SS), False)
-    hline(z["hunt_level"], int(2 * SS), True)
+    hline(z["level"], int(3 * SS), False, x_m)                  # MSS level (the broken swing)
+    hline(z["hunt_level"], int(2 * SS), True, x_h)              # the HUNTED swing high/low (not the wick tip)
 
     # markers: sweep wick tip and MSS candle
     f_tag = _font(15 * SS, True)
@@ -579,7 +626,7 @@ def render_chart(z, sym):
     if si is not None:
         x, y = X(si), Y(z["sweep_extreme"])
         d.ellipse([x - 5 * SS, y - 5 * SS, x + 5 * SS, y + 5 * SS], outline=AMB, width=2 * SS)
-        _text(d, (x, y + (12 if buy else -12) * SS), "SWEEP", f_tag, AMB, "ma" if buy else "ms")
+        _text(d, (x, y + (12 if buy else -12) * SS), "SWEEP WICK", f_tag, AMB, "ma" if buy else "ms")
     mi = n - 1
     mc = cs[mi]
     x = X(mi)
@@ -597,15 +644,25 @@ def render_chart(z, sym):
                             outline=AMB, width=SS)
         _text(d, ((x0 + x1) / 2, y), txt, f, (20, 20, 20) if filled else AMB, "mm")
 
-    pill(z["level"], "5m", True)
-    pill(z["hunt_level"], "HUNT", False)
+    pill(z["level"], "MSS", True)
+    pill(z["hunt_level"], "HUNTED", False)
 
     # title / subtitle / footer
     f_title, f_sub = _font(30 * SS, True), _font(17 * SS)
     dot = UP if buy else DN
     d.rounded_rectangle([Lx, 24 * SS, Lx + 12 * SS, 48 * SS], radius=3 * SS, fill=dot)
-    _text(d, (Lx + 24 * SS, 36 * SS),
-          f"{sym['name']}  ·  1H  ·  {'BUY' if buy else 'SELL'} ZONE", f_title, TXT, "lm")
+    title = f"{sym['name']}  ·  1H  ·  {'BUY' if buy else 'SELL'} ZONE"
+    _text(d, (Lx + 24 * SS, 36 * SS), title, f_title, TXT, "lm")
+    if z.get("note"):
+        try:
+            tw = d.textlength(title, font=f_title)
+        except Exception:
+            tw = 520 * SS
+        f_note = _font(17 * SS, True)
+        nx = Lx + 24 * SS + tw + 18 * SS
+        nw = d.textlength(z["note"], font=f_note) + 22 * SS if hasattr(d, "textlength") else 150 * SS
+        d.rounded_rectangle([nx, 22 * SS, nx + nw, 50 * SS], radius=6 * SS, fill=(86, 52, 6), outline=AMB, width=SS)
+        _text(d, (nx + nw / 2, 36 * SS), z["note"], f_note, AMB, "mm")
     _text(d, (Lx + 24 * SS, 64 * SS),
           f"MSS candle closed {fmt_time(z['formed_close'])} ({city()})   "
           f"·   alert edge = {'top' if buy else 'bottom'} line", f_sub, DIM, "lm")
@@ -680,20 +737,40 @@ class Telegram:
 # =====================================================================
 #  MESSAGES
 # =====================================================================
-def formation_caption(z, sym):
+def age_text(sec):
+    d, r = divmod(int(sec), 86400)
+    h, r = divmod(r, 3600)
+    if d:
+        return f"{d}d {h}h"
+    return f"{h}h {r // 60}m" if h else f"{r // 60}m"
+
+
+def mode_text(z):
+    return " + ".join(MODE_TEXT[x] for x in (z.get("modes") or []) if x in MODE_TEXT)
+
+
+def zone_lines(z, sym):
+    """The common body of a zone caption (live and scan)."""
     dec, buy = sym["dec"], z["dir"] == "buy"
-    tags = " ".join("#" + t for t in sym["tags"])
-    head = "🟢 <b>BUY ZONE</b>" if buy else "🔴 <b>SELL ZONE</b>"
-    lines = [
-        f"{head}   {tags}",
-        f"⏱ 1H closed: {fmt_time(z['formed_close'])} ({city()})",
-        "",
+    mt = mode_text(z)
+    return [
         f"📦 Zone: {fp(z['bottom'], dec)} – {fp(z['top'], dec)}",
         f"🎯 5m alert edge: <b>{fp(z['level'], dec)}</b> ({'top' if buy else 'bottom'} line)",
-        f"🪝 Hunt: swing {'low' if buy else 'high'} {fp(z['hunt_level'], dec)} swept by wick",
-        f"🧱 MSS: body closed {'above' if buy else 'below'} {fp(z['level'], dec)}",
+        f"🪝 Hunted: swing {'low' if buy else 'high'} {fp(z['hunt_level'], dec)} "
+        f"(wick reached {fp(z['sweep_extreme'], dec)})",
+        f"🧱 MSS: body closed {'above' if buy else 'below'} {fp(z['level'], dec)}" + (f" · {mt}" if mt else ""),
     ]
-    if z.get("late"):
+
+
+def formation_caption(z, sym):
+    buy = z["dir"] == "buy"
+    tags = " ".join("#" + t for t in sym["tags"])
+    head = "🟢 <b>BUY ZONE</b>" if buy else "🔴 <b>SELL ZONE</b>"
+    lines = [f"{head}   {tags}", f"⏱ 1H closed: {fmt_time(z['formed_close'])} ({city()})"]
+    if z.get("backfill"):
+        lines.append(f"🕘 BACKFILL – formed {age_text(z.get('backfill_age', 0))} ago, still unused")
+    lines += [""] + zone_lines(z, sym)
+    if z.get("late") and not z.get("backfill"):
         lines.append("⚠️ detected late (bot was waiting for data)")
     lines += ["", f"🏷 #{zone_tag(z)}"]
     return "\n".join(lines)
@@ -807,30 +884,42 @@ def do_1h(env, sym, st, state, zones, now):
         return
     newest_close = closed[-1].t + 3600
     last_close = st.get("last_1h_close")
-    if last_close is None:                       # first run: look at the newest closed candle only
-        last_close = closed[-2].t + 3600 if len(closed) >= 2 else newest_close
-    idxs = [i for i, c in enumerate(closed) if c.t + 3600 > last_close][-MAX_CATCHUP_BARS:]
+    backfill = last_close is None                 # first run (or algorithm upgrade): re-read the last week
+    if backfill:
+        horizon = now - BACKFILL_DAYS * 86400
+    else:
+        horizon = max(last_close, now - MAX_CATCHUP_BARS * 3600)
+    first_m = next((i for i, c in enumerate(closed) if c.t + 3600 > horizon), len(closed))
+    found = []
+    for direction in ("buy", "sell"):
+        found += detect_zones(closed, direction, first_m=first_m)
+    found.sort(key=lambda s_: (s_["m"], s_["dir"]))
     known = {z["id"] for z in state["zones"]}
-    for i in idxs:
-        for direction in ("buy", "sell"):
-            setup = find_setup(closed, i, direction)
-            if not setup:
-                continue
-            z = make_zone(sym, setup, closed, src)
-            if z["id"] in known:
-                continue
-            known.add(z["id"])
-            after = [c for c in closed if c.t >= z["formed_close"]]
-            used = next((c for c in after if touched(z, c)), None)
-            if used is not None:                 # already used by later candles -> silent
-                z.update(touched=True, touch_t=used.t, notified=True, win=[])
-            elif now - z["formed_close"] > MAX_LATE_ANNOUNCE_SEC:
-                z.update(expired=True, notified=True, win=[])
-            elif now - z["formed_close"] > 2 * 3600:
-                z["late"] = True
-            state["zones"].append(z)
-            zones.append(z)
-            log(f"[{sym['name']}] new {direction} zone, level {z['level']}")
+    fresh = []
+    for setup in found:
+        z = make_zone(sym, setup, closed, src)
+        if z["id"] in known:
+            continue
+        known.add(z["id"])
+        age = now - z["formed_close"]
+        used = next((c for c in closed if c.t >= z["formed_close"] and touched(z, c)), None)
+        if used is not None:                     # already used by later candles -> silent
+            z.update(touched=True, touch_t=used.t, notified=True, win=[])
+        elif age > MAX_LATE_ANNOUNCE_SEC:
+            z.update(expired=True, notified=True, win=[])
+        else:
+            if age > 2 * 3600:
+                if backfill:
+                    z["backfill"], z["backfill_age"] = True, age
+                else:
+                    z["late"] = True
+            fresh.append(z)
+        state["zones"].append(z)
+        zones.append(z)
+        log(f"[{sym['name']}] new {setup['dir']} zone, level {z['level']}")
+    if backfill:                                 # keep only the newest unused ones
+        for z in fresh[:-MAX_BACKFILL_PER_SYMBOL]:
+            z.update(expired=True, notified=True, win=[])
     # safety net: a touch visible in closed 1H candles that the 5m path did not catch
     for z in active_zones(zones):
         hit = next((c for c in closed if c.t >= z["formed_close"] and touched(z, c)), None)
@@ -924,6 +1013,11 @@ def run_once(env, symbols=None):
     t0 = time.time()
     now = int(env.clock())
     state = load_state()
+    if state.get("algo") != ALGO_VERSION:          # new logic -> re-read the last week once
+        for s_ in state["symbols"].values():
+            s_.pop("last_1h_close", None)
+            s_.pop("next_1h_try", None)
+        state["algo"] = ALGO_VERSION
     env.checkpoint = lambda: save_state(state)
     if not state.get("started"):
         try:
@@ -1004,6 +1098,109 @@ def run_test(tg):
 
 
 # =====================================================================
+#  SCAN MODE  (shows past zones + near-misses, so the rules can be checked against your eyes)
+# =====================================================================
+SCAN_VARIANTS = [
+    ("wick-first", dict(strict_first=False)),
+    ("re-sweep", dict(first_pierce=False)),
+    ("borderline", dict(tol_rel=0.0006)),
+]
+SCAN_MAX_VALID = 12
+SCAN_MAX_NEAR = 10
+
+
+def why_not(label, setup, cs):
+    if label == "wick-first":
+        c = cs[setup["first_touch"]]
+        diff = abs(setup["level"] - c.c) / abs(setup["level"]) * 100
+        return (f"the first touch of the MSS level ({fmt_time(c.t)}) was wick-only (its close was "
+                f"{diff:.3f}% short); the body closed beyond it only later")
+    if label == "re-sweep":
+        return "the hunted swing had already been pierced by an earlier candle (not its first sweep)"
+    if label == "borderline":
+        return "a body/close missed the rule by less than 0.06% (tiny price difference between feeds?)"
+    return label
+
+
+def scan_symbol(cs, horizon):
+    """cs = closed candles.  Returns (valid, near): lists of dicts sorted by time.
+    valid = zones the live bot would have sent;  near = zones found only with a relaxed rule."""
+    start = next((i for i, c in enumerate(cs) if c.t + 3600 >= horizon), len(cs))
+    valid, seen = [], set()
+    for d in ("buy", "sell"):
+        for s in detect_zones(cs, d, first_m=start):
+            valid.append(s)
+            seen.add((d, s["m"]))
+    valid.sort(key=lambda s: (s["m"], s["dir"]))
+    near = {}
+    for label, kw in SCAN_VARIANTS:
+        for d in ("buy", "sell"):
+            for s in detect_zones(cs, d, first_m=start, **kw):
+                if (d, s["m"]) not in seen:
+                    near.setdefault((d, s["m"]), []).append((label, s))
+    near_list = []
+    for (d, m) in sorted(near, key=lambda k: (k[1], k[0])):
+        items = near[(d, m)]
+        near_list.append(dict(setup=items[0][1], why=[why_not(lb, st, cs) for lb, st in items]))
+    return valid, near_list
+
+
+def scan_caption(z, sym, head, extra):
+    buy = z["dir"] == "buy"
+    tags = " ".join("#" + t for t in sym["tags"])
+    lines = [head,
+             f"{'🟢 <b>BUY ZONE</b>' if buy else '🔴 <b>SELL ZONE</b>'}   {tags}",
+             f"⏱ 1H closed: {fmt_time(z['formed_close'])} ({city()})", ""] + zone_lines(z, sym)
+    return "\n".join(lines + extra)
+
+
+def zone_status(z, closed):
+    hit = next((c for c in closed if c.t >= z["formed_close"] and touched(z, c)), None)
+    return f"touched (1H candle {fmt_time(hit.t)})" if hit else "not touched since"
+
+
+def run_scan(tg, name, days, fetch=get_candles, pause=1.2):
+    now = int(time.time())
+    key = str(name).strip().upper()
+    sym = next((s for s in SYMBOLS if key == s["name"] or key in [t.upper() for t in s["tags"]]), None)
+    if sym is None:
+        tg.send_message("🔎 Unknown symbol. Use one of: " + ", ".join(s["name"] for s in SYMBOLS))
+        return 1
+    days = max(1, min(int(days), 90))
+    status, cs, src = fetch(sym, {}, "1H", "3mo" if days > 30 else "1mo")
+    if status != "ok":
+        tg.send_message(f"🔎 SCAN {sym['name']}: no data ({esc(src)[:120]})")
+        return 1
+    closed = closed_candles(cs, now)
+    if len(closed) < 40:
+        tg.send_message(f"🔎 SCAN {sym['name']}: not enough candles ({len(closed)})")
+        return 1
+    valid, near = scan_symbol(closed, now - days * 86400)
+    shown_v, shown_n = valid[-SCAN_MAX_VALID:], near[-SCAN_MAX_NEAR:]
+    tg.send_message(
+        f"🔎 <b>SCAN {sym['name']}</b> · data {esc(src)}\n"
+        f"candles: {len(closed)} (from {fmt_time(closed[0].t)} to {fmt_time(closed[-1].t + 3600)}, {city()})\n"
+        f"✅ zones the bot would send live: {len(valid)} (showing the last {len(shown_v)})\n"
+        f"🟡 near-misses (NOT sent live): {len(near)} (showing the last {len(shown_n)})\n"
+        "Answer to Claude like:  S1 ✅   S2 ❌ reason   N1 ✅ (should count)")
+    for i, st in enumerate(shown_v, 1):
+        z = make_zone(sym, st, closed, src)
+        cap = scan_caption(z, sym, f"🔎 <b>S{i}</b> of {len(shown_v)} – the bot WOULD send this live",
+                           [f"📍 {zone_status(z, closed)}"])
+        tg.send_photo(render_chart(z, sym), cap)
+        time.sleep(pause)
+    for i, item in enumerate(shown_n, 1):
+        z = make_zone(sym, item["setup"], closed, src)
+        z["note"] = "NEAR-MISS"
+        why = "\n".join("❓ not sent because: " + esc(w) for w in item["why"][:2])
+        cap = scan_caption(z, sym, f"🟡 <b>N{i}</b> of {len(shown_n)} – NOT sent live", [why, f"📍 {zone_status(z, closed)}"])
+        tg.send_photo(render_chart(z, sym), cap)
+        time.sleep(pause)
+    log(f"scan finished: {len(valid)} valid, {len(near)} near-misses")
+    return 0
+
+
+# =====================================================================
 def main(argv):
     mode = argv[1] if len(argv) > 1 else "run"
     token, chat = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip(), os.environ.get("TELEGRAM_CHAT_ID", "").strip()
@@ -1014,6 +1211,10 @@ def main(argv):
     if mode == "test":
         run_test(tg)
         return 0
+    if mode == "scan":
+        arg_name = argv[2] if len(argv) > 2 and argv[2].strip() else "ETHUSD"
+        arg_days = argv[3] if len(argv) > 3 and argv[3].strip().isdigit() else "30"
+        return run_scan(tg, arg_name, int(arg_days))
     run_once(Env(tg))
     return 0
 
