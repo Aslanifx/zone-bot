@@ -7,7 +7,7 @@
    "last_1h_close": 1795104000
   },
   "ETHUSD": {
-   "last_1h_close": 1795100400
+   "last_1h_close": 1795104000
   },
   "EURUSD": {
    "last_1h_close": 1795104000,
@@ -950,6 +950,35 @@
    "symbol": "GBPUSD",
    "tf": "1H",
    "top": 1.317228078842163,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 1791.2,
+   "close_price": 1779.98,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1795104000,
+   "hunt_level": 1812.58,
+   "hunt_t": 1795082400,
+   "id": "ETHUSD-S-1795104000",
+   "late": false,
+   "level": 1791.2,
+   "modes": [
+    "L",
+    "N"
+   ],
+   "msg_id": 147,
+   "mss_swing_t": 1795089600,
+   "notified": true,
+   "src": "coinbase:ETH-USD",
+   "sweep_extreme": 1813.09,
+   "sweep_t": 1795093200,
+   "symbol": "ETHUSD",
+   "tf": "1H",
+   "top": 1812.58,
    "touch_t": null,
    "touched": false,
    "win": []
