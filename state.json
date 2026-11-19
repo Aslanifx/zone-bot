@@ -4,7 +4,7 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795068000
+   "last_1h_close": 1795071600
   },
   "ETHUSD": {
    "last_1h_close": 1795068000
@@ -22,7 +22,7 @@
     "first": 1795071335
    },
    "last_1h_close": 1795023000,
-   "next_1h_try": 1795071612,
+   "next_1h_try": 1795075212,
    "src": "^GDAXI"
   },
   "NAS100": {
