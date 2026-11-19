@@ -490,8 +490,9 @@
    "symbol": "BTCUSD",
    "tf": "1H",
    "top": 63232.26,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1795067400,
+   "touched": true,
    "win": []
   }
  ]
