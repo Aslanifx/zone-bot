@@ -4,41 +4,41 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795096800
+   "last_1h_close": 1795100400
   },
   "ETHUSD": {
    "last_1h_close": 1795096800
   },
   "EURUSD": {
-   "last_1h_close": 1795096800,
+   "last_1h_close": 1795100400,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795096800,
+   "last_1h_close": 1795100400,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1795096800,
+   "last_1h_close": 1795100400,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795096800,
+   "last_1h_close": 1795100400,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795096800,
+   "last_1h_close": 1795100400,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795096800,
+   "last_1h_close": 1795100400,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795096800,
+   "last_1h_close": 1795100400,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795096800,
+   "last_1h_close": 1795100400,
    "src": "GC=F"
   }
  },
@@ -862,6 +862,63 @@
    "symbol": "USDJPY",
    "tf": "1H",
    "top": 159.65199279785156,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 1.314509630203247,
+   "close_price": 1.3141467571258545,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1795100400,
+   "hunt_level": 1.317228078842163,
+   "hunt_t": 1795006800,
+   "id": "GBPUSD-S-1795100400",
+   "late": false,
+   "level": 1.314509630203247,
+   "modes": [
+    "N"
+   ],
+   "msg_id": 141,
+   "mss_swing_t": 1795078800,
+   "notified": true,
+   "src": "yahoo:GBPUSD=X",
+   "sweep_extreme": 1.3172800540924072,
+   "sweep_t": 1795082400,
+   "symbol": "GBPUSD",
+   "tf": "1H",
+   "top": 1.317228078842163,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 63506.81,
+   "close_price": 63480.84,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1795100400,
+   "hunt_level": 64013.74,
+   "hunt_t": 1795086000,
+   "id": "BTCUSD-S-1795100400",
+   "late": false,
+   "level": 63506.81,
+   "modes": [
+    "L",
+    "N"
+   ],
+   "msg_id": 142,
+   "mss_swing_t": 1795089600,
+   "notified": true,
+   "src": "coinbase:BTC-USD",
+   "sweep_extreme": 64023.69,
+   "sweep_t": 1795093200,
+   "symbol": "BTCUSD",
+   "tf": "1H",
+   "top": 64013.74,
    "touch_t": null,
    "touched": false,
    "win": []
