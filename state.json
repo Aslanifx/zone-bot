@@ -18,6 +18,9 @@
    "src": "GBPUSD=X"
   },
   "GER40": {
+   "fail_5m": {
+    "first": 1795128032
+   },
    "last_1h_close": 1795109400,
    "next_1h_try": 1795129212,
    "next_5m_try": 1795127933,
