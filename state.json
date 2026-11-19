@@ -7,7 +7,7 @@
    "last_1h_close": 1795100400
   },
   "ETHUSD": {
-   "last_1h_close": 1795096800
+   "last_1h_close": 1795100400
   },
   "EURUSD": {
    "last_1h_close": 1795100400,
@@ -919,8 +919,9 @@
    "symbol": "BTCUSD",
    "tf": "1H",
    "top": 64013.74,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1795100400,
+   "touched": true,
    "win": []
   }
  ]
