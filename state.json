@@ -21,7 +21,8 @@
   },
   "GER40": {
    "fail_5m": {
-    "first": 1795128032
+    "first": 1795128032,
+    "warned": true
    },
    "last_1h_close": 1795109400,
    "next_1h_try": 1795136412,
