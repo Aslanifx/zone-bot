@@ -4,10 +4,10 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795208400
+   "last_1h_close": 1795212000
   },
   "ETHUSD": {
-   "last_1h_close": 1795208400
+   "last_1h_close": 1795212000
   },
   "EURUSD": {
    "last_1h_close": 1795212000,
@@ -20,7 +20,7 @@
   "GER40": {
    "last_1h_close": 1795195800,
    "next_1h_try": 1795215612,
-   "next_5m_try": 1795212328,
+   "next_5m_try": 1795212928,
    "src": "^GDAXI"
   },
   "NAS100": {
