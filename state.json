@@ -4,41 +4,41 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795165200
+   "last_1h_close": 1795168800
   },
   "ETHUSD": {
    "last_1h_close": 1795165200
   },
   "EURUSD": {
-   "last_1h_close": 1795165200,
+   "last_1h_close": 1795168800,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795165200,
+   "last_1h_close": 1795168800,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1795165200,
+   "last_1h_close": 1795168800,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795165200,
+   "last_1h_close": 1795168800,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795165200,
+   "last_1h_close": 1795168800,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795165200,
+   "last_1h_close": 1795168800,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795165200,
+   "last_1h_close": 1795168800,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795165200,
+   "last_1h_close": 1795168800,
    "src": "GC=F"
   }
  },
@@ -1075,6 +1075,34 @@
    "touch_sent": true,
    "touch_t": 1795165200,
    "touched": true,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 158.86000061035156,
+   "close_price": 158.71499633789062,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1795168800,
+   "hunt_level": 159.9600067138672,
+   "hunt_t": 1794585600,
+   "id": "USDJPY-S-1795168800",
+   "late": false,
+   "level": 158.86000061035156,
+   "modes": [
+    "L"
+   ],
+   "msg_id": 185,
+   "mss_swing_t": 1794906000,
+   "notified": true,
+   "src": "yahoo:JPY=X",
+   "sweep_extreme": 159.96800231933594,
+   "sweep_t": 1795089600,
+   "symbol": "USDJPY",
+   "tf": "1H",
+   "top": 159.9600067138672,
+   "touch_t": null,
+   "touched": false,
    "win": []
   }
  ]
