@@ -6,12 +6,21 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'run = normal | test = send a test message + sample chart'
+        description: 'run = normal | test = test message | scan = show past zones of one symbol'
         type: choice
         options:
           - run
           - test
+          - scan
         default: run
+      symbol:
+        description: 'scan only: NAS100 XAUUSD US30 SPX500 GER40 EURUSD USDJPY GBPUSD BTCUSD ETHUSD'
+        required: false
+        default: ETHUSD
+      days:
+        description: 'scan only: how many days back (max 90, crypto max ~30)'
+        required: false
+        default: '30'
 
 concurrency:
   group: zone-bot
@@ -48,7 +57,9 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           MODE: ${{ github.event.inputs.mode || 'run' }}
-        run: python bot.py "$MODE"
+          SCAN_SYMBOL: ${{ github.event.inputs.symbol || 'ETHUSD' }}
+          SCAN_DAYS: ${{ github.event.inputs.days || '30' }}
+        run: python bot.py "$MODE" "$SCAN_SYMBOL" "$SCAN_DAYS"
 
       - name: Save state
         if: always()
