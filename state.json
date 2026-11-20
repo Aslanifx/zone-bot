@@ -27,23 +27,23 @@
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795212000,
+   "last_1h_close": 1795215599,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795212000,
+   "last_1h_close": 1795215598,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795212000,
+   "last_1h_close": 1795215596,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795212000,
+   "last_1h_close": 1795215598,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795212000,
+   "last_1h_close": 1795215597,
    "src": "GC=F"
   }
  },
