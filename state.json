@@ -10,11 +10,11 @@
    "last_1h_close": 1795212000
   },
   "EURUSD": {
-   "last_1h_close": 1795212000,
+   "last_1h_close": 1795215600,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795212000,
+   "last_1h_close": 1795215600,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -22,7 +22,7 @@
     "first": 1795213838
    },
    "last_1h_close": 1795195800,
-   "next_1h_try": 1795215612,
+   "next_1h_try": 1795219212,
    "next_5m_try": 1795213533,
    "src": "^GDAXI"
   },
