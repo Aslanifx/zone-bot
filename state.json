@@ -4,14 +4,14 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795237200
+   "last_1h_close": 1795240800
   },
   "ETHUSD": {
    "last_1h_close": 1795237200
   },
   "EURUSD": {
    "last_1h_close": 1795215600,
-   "next_1h_try": 1795240812,
+   "next_1h_try": 1795244412,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
@@ -19,7 +19,7 @@
     "first": 1795235726
    },
    "last_1h_close": 1795215600,
-   "next_1h_try": 1795240812,
+   "next_1h_try": 1795244412,
    "next_5m_try": 1795235486,
    "src": "GBPUSD=X"
   },
@@ -29,7 +29,7 @@
     "warned": true
    },
    "last_1h_close": 1795195800,
-   "next_1h_try": 1795240812,
+   "next_1h_try": 1795244412,
    "next_5m_try": 1795213533,
    "src": "^GDAXI"
   },
@@ -39,23 +39,23 @@
     "warned": true
    },
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795240812,
+   "next_1h_try": 1795244412,
    "next_5m_try": 1795233928,
    "src": "NQ=F"
   },
   "SPX500": {
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795240812,
+   "next_1h_try": 1795244412,
    "src": "ES=F"
   },
   "US30": {
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795240812,
+   "next_1h_try": 1795244412,
    "src": "YM=F"
   },
   "USDJPY": {
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795240812,
+   "next_1h_try": 1795244412,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -64,7 +64,7 @@
     "warned": true
    },
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795240812,
+   "next_1h_try": 1795244412,
    "next_5m_try": 1795233928,
    "src": "GC=F"
   }
@@ -117,31 +117,6 @@
    "top": 2051.1,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "bottom": 159.5540008544922,
-   "close_price": 159.46600341796875,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1794808800,
-   "hunt_level": 159.84800720214844,
-   "hunt_t": 1794600000,
-   "id": "USDJPY-S-1794808800",
-   "late": false,
-   "level": 159.5540008544922,
-   "msg_id": 103,
-   "mss_swing_t": 1794603600,
-   "notified": true,
-   "src": "yahoo:JPY=X",
-   "sweep_extreme": 159.86199951171875,
-   "sweep_t": 1794787200,
-   "symbol": "USDJPY",
-   "tf": "1H",
-   "top": 159.84800720214844,
-   "touch_sent": true,
-   "touch_t": 1794810900,
-   "touched": true,
    "win": []
   },
   {
