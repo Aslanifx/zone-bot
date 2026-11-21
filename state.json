@@ -33,7 +33,7 @@
   "NAS100": {
    "last_1h_close": 1795215599,
    "next_1h_try": 1795221633,
-   "next_5m_try": 1795220735,
+   "next_5m_try": 1795221642,
    "src": "NQ=F"
   },
   "SPX500": {
@@ -54,7 +54,7 @@
   "XAUUSD": {
    "last_1h_close": 1795215597,
    "next_1h_try": 1795221633,
-   "next_5m_try": 1795220735,
+   "next_5m_try": 1795221642,
    "src": "GC=F"
   }
  },
