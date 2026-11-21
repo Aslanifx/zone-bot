@@ -7,7 +7,7 @@
    "last_1h_close": 1795240800
   },
   "ETHUSD": {
-   "last_1h_close": 1795237200
+   "last_1h_close": 1795240800
   },
   "EURUSD": {
    "last_1h_close": 1795215600,
@@ -16,7 +16,8 @@
   },
   "GBPUSD": {
    "fail_5m": {
-    "first": 1795235726
+    "first": 1795235726,
+    "warned": true
    },
    "last_1h_close": 1795215600,
    "next_1h_try": 1795244412,
