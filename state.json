@@ -35,7 +35,8 @@
   },
   "NAS100": {
    "fail_5m": {
-    "first": 1795233937
+    "first": 1795233937,
+    "warned": true
    },
    "last_1h_close": 1795212000,
    "next_1h_try": 1795240812,
@@ -59,7 +60,8 @@
   },
   "XAUUSD": {
    "fail_5m": {
-    "first": 1795233937
+    "first": 1795233937,
+    "warned": true
    },
    "last_1h_close": 1795212000,
    "next_1h_try": 1795240812,
