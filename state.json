@@ -17,7 +17,7 @@
   "GBPUSD": {
    "last_1h_close": 1795215600,
    "next_1h_try": 1795230012,
-   "next_5m_try": 1795227053,
+   "next_5m_try": 1795227930,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -33,7 +33,7 @@
   "NAS100": {
    "last_1h_close": 1795215599,
    "next_1h_try": 1795230012,
-   "next_5m_try": 1795227053,
+   "next_5m_try": 1795227930,
    "src": "NQ=F"
   },
   "SPX500": {
@@ -54,7 +54,7 @@
   "XAUUSD": {
    "last_1h_close": 1795215597,
    "next_1h_try": 1795230012,
-   "next_5m_try": 1795227053,
+   "next_5m_try": 1795227930,
    "src": "GC=F"
   }
  },
