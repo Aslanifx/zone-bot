@@ -4,14 +4,14 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795233600
+   "last_1h_close": 1795237200
   },
   "ETHUSD": {
    "last_1h_close": 1795233600
   },
   "EURUSD": {
    "last_1h_close": 1795215600,
-   "next_1h_try": 1795237212,
+   "next_1h_try": 1795240812,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
@@ -19,7 +19,7 @@
     "first": 1795235726
    },
    "last_1h_close": 1795215600,
-   "next_1h_try": 1795237212,
+   "next_1h_try": 1795240812,
    "next_5m_try": 1795235486,
    "src": "GBPUSD=X"
   },
@@ -29,7 +29,7 @@
     "warned": true
    },
    "last_1h_close": 1795195800,
-   "next_1h_try": 1795237212,
+   "next_1h_try": 1795240812,
    "next_5m_try": 1795213533,
    "src": "^GDAXI"
   },
@@ -37,32 +37,32 @@
    "fail_5m": {
     "first": 1795233937
    },
-   "last_1h_close": 1795215599,
-   "next_1h_try": 1795237212,
+   "last_1h_close": 1795212000,
+   "next_1h_try": 1795240812,
    "next_5m_try": 1795233928,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795215598,
-   "next_1h_try": 1795237212,
+   "last_1h_close": 1795212000,
+   "next_1h_try": 1795240812,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795215596,
-   "next_1h_try": 1795237212,
+   "last_1h_close": 1795212000,
+   "next_1h_try": 1795240812,
    "src": "YM=F"
   },
   "USDJPY": {
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795237212,
+   "next_1h_try": 1795240812,
    "src": "JPY=X"
   },
   "XAUUSD": {
    "fail_5m": {
     "first": 1795233937
    },
-   "last_1h_close": 1795215597,
-   "next_1h_try": 1795237212,
+   "last_1h_close": 1795212000,
+   "next_1h_try": 1795240812,
    "next_5m_try": 1795233928,
    "src": "GC=F"
   }
