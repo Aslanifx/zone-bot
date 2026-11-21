@@ -17,6 +17,7 @@
   "GBPUSD": {
    "last_1h_close": 1795215600,
    "next_1h_try": 1795221633,
+   "next_5m_try": 1795221325,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -47,7 +48,7 @@
   },
   "USDJPY": {
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795220459,
+   "next_1h_try": 1795221925,
    "src": "JPY=X"
   },
   "XAUUSD": {
