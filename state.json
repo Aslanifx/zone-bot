@@ -11,7 +11,7 @@
   },
   "EURUSD": {
    "last_1h_close": 1795215600,
-   "next_1h_try": 1795312812,
+   "next_1h_try": 1795316412,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
@@ -20,7 +20,7 @@
     "warned": true
    },
    "last_1h_close": 1795215600,
-   "next_1h_try": 1795312812,
+   "next_1h_try": 1795316412,
    "next_5m_try": 1795235486,
    "src": "GBPUSD=X"
   },
@@ -30,7 +30,7 @@
     "warned": true
    },
    "last_1h_close": 1795195800,
-   "next_1h_try": 1795312812,
+   "next_1h_try": 1795316412,
    "next_5m_try": 1795213533,
    "src": "^GDAXI"
   },
@@ -40,23 +40,23 @@
     "warned": true
    },
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795312812,
+   "next_1h_try": 1795316412,
    "next_5m_try": 1795233928,
    "src": "NQ=F"
   },
   "SPX500": {
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795312812,
+   "next_1h_try": 1795316412,
    "src": "ES=F"
   },
   "US30": {
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795312812,
+   "next_1h_try": 1795316412,
    "src": "YM=F"
   },
   "USDJPY": {
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795312812,
+   "next_1h_try": 1795316412,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -65,7 +65,7 @@
     "warned": true
    },
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795312812,
+   "next_1h_try": 1795316412,
    "next_5m_try": 1795233928,
    "src": "GC=F"
   }
@@ -118,31 +118,6 @@
    "top": 2051.1,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "bottom": 3851.300048828125,
-   "close_price": 3869.199951171875,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1794880800,
-   "hunt_level": 3851.300048828125,
-   "hunt_t": 1794862800,
-   "id": "XAUUSD-B-1794880800",
-   "late": false,
-   "level": 3867.300048828125,
-   "msg_id": 117,
-   "mss_swing_t": 1794870000,
-   "notified": true,
-   "src": "yahoo:GC=F",
-   "sweep_extreme": 3845.89990234375,
-   "sweep_t": 1794877200,
-   "symbol": "XAUUSD",
-   "tf": "1H",
-   "top": 3867.300048828125,
-   "touch_sent": true,
-   "touch_t": 1794880800,
-   "touched": true,
    "win": []
   },
   {
