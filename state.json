@@ -35,13 +35,8 @@
    "src": "^GDAXI"
   },
   "NAS100": {
-   "fail_5m": {
-    "first": 1795233937,
-    "warned": true
-   },
    "last_1h_close": 1795215599,
    "next_1h_try": 1795392012,
-   "next_5m_try": 1795233928,
    "src": "NQ=F"
   },
   "SPX500": {
@@ -60,13 +55,8 @@
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "fail_5m": {
-    "first": 1795233937,
-    "warned": true
-   },
    "last_1h_close": 1795215597,
    "next_1h_try": 1795392012,
-   "next_5m_try": 1795233928,
    "src": "GC=F"
   }
  },
