@@ -11,7 +11,7 @@
   },
   "EURUSD": {
    "last_1h_close": 1795215600,
-   "next_1h_try": 1795348812,
+   "next_1h_try": 1795352412,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
@@ -20,7 +20,7 @@
     "warned": true
    },
    "last_1h_close": 1795215600,
-   "next_1h_try": 1795348812,
+   "next_1h_try": 1795352412,
    "next_5m_try": 1795235486,
    "src": "GBPUSD=X"
   },
@@ -30,7 +30,7 @@
     "warned": true
    },
    "last_1h_close": 1795195800,
-   "next_1h_try": 1795348812,
+   "next_1h_try": 1795352412,
    "next_5m_try": 1795213533,
    "src": "^GDAXI"
   },
@@ -40,23 +40,23 @@
     "warned": true
    },
    "last_1h_close": 1795215599,
-   "next_1h_try": 1795348812,
+   "next_1h_try": 1795352412,
    "next_5m_try": 1795233928,
    "src": "NQ=F"
   },
   "SPX500": {
    "last_1h_close": 1795215598,
-   "next_1h_try": 1795348812,
+   "next_1h_try": 1795352412,
    "src": "ES=F"
   },
   "US30": {
    "last_1h_close": 1795215596,
-   "next_1h_try": 1795348812,
+   "next_1h_try": 1795352412,
    "src": "YM=F"
   },
   "USDJPY": {
    "last_1h_close": 1795212000,
-   "next_1h_try": 1795348812,
+   "next_1h_try": 1795352412,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -65,7 +65,7 @@
     "warned": true
    },
    "last_1h_close": 1795215597,
-   "next_1h_try": 1795348812,
+   "next_1h_try": 1795352412,
    "next_5m_try": 1795233928,
    "src": "GC=F"
   }
@@ -221,34 +221,6 @@
   },
   {
    "backfill": false,
-   "bottom": 27180.5,
-   "close_price": 27441.0,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1794916800,
-   "hunt_level": 27180.5,
-   "hunt_t": 1794870000,
-   "id": "NAS100-B-1794916800",
-   "late": false,
-   "level": 27372.25,
-   "modes": [
-    "N"
-   ],
-   "msg_id": null,
-   "mss_swing_t": 1794898800,
-   "notified": true,
-   "src": "yahoo:NQ=F",
-   "sweep_extreme": 27085.0,
-   "sweep_t": 1794906000,
-   "symbol": "NAS100",
-   "tf": "1H",
-   "top": 27372.25,
-   "touch_t": 1794916800,
-   "touched": true,
-   "win": []
-  },
-  {
-   "backfill": false,
    "bottom": 26951.75,
    "close_price": 27422.75,
    "dir": "buy",
@@ -274,34 +246,6 @@
    "tf": "1H",
    "top": 27424.5,
    "touch_t": 1795046400,
-   "touched": true,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 7402.0,
-   "close_price": 7452.5,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1794916800,
-   "hunt_level": 7402.0,
-   "hunt_t": 1794218400,
-   "id": "SPX500-B-1794916800",
-   "late": false,
-   "level": 7452.25,
-   "modes": [
-    "N"
-   ],
-   "msg_id": null,
-   "mss_swing_t": 1794884400,
-   "notified": true,
-   "src": "yahoo:ES=F",
-   "sweep_extreme": 7395.25,
-   "sweep_t": 1794906000,
-   "symbol": "SPX500",
-   "tf": "1H",
-   "top": 7452.25,
-   "touch_t": 1794916800,
    "touched": true,
    "win": []
   },
