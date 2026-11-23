@@ -10,11 +10,11 @@
    "last_1h_close": 1795406400
   },
   "EURUSD": {
-   "last_1h_close": 1795406400,
+   "last_1h_close": 1795410000,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795406400,
+   "last_1h_close": 1795410000,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -23,24 +23,27 @@
     "warned": true
    },
    "last_1h_close": 1795195800,
-   "next_1h_try": 1795410012,
+   "next_1h_try": 1795413612,
    "next_5m_try": 1795213533,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795406400,
+   "last_1h_close": 1795402800,
+   "next_1h_try": 1795411248,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795406400,
+   "last_1h_close": 1795402800,
+   "next_1h_try": 1795411248,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795406400,
+   "last_1h_close": 1795402800,
+   "next_1h_try": 1795411248,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795406400,
+   "last_1h_close": 1795410000,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -234,34 +237,6 @@
    "top": 26817.439453125,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 159.28700256347656,
-   "close_price": 159.15699768066406,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1794978000,
-   "hunt_level": 159.61199951171875,
-   "hunt_t": 1794877200,
-   "id": "USDJPY-S-1794978000",
-   "late": false,
-   "level": 159.28700256347656,
-   "modes": [
-    "N"
-   ],
-   "msg_id": null,
-   "mss_swing_t": 1794945600,
-   "notified": true,
-   "src": "yahoo:JPY=X",
-   "sweep_extreme": 159.65199279785156,
-   "sweep_t": 1794963600,
-   "symbol": "USDJPY",
-   "tf": "1H",
-   "top": 159.61199951171875,
-   "touch_t": 1794978000,
-   "touched": true,
    "win": []
   },
   {
