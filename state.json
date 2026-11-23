@@ -4,10 +4,10 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795417200
+   "last_1h_close": 1795420800
   },
   "ETHUSD": {
-   "last_1h_close": 1795417200
+   "last_1h_close": 1795420800
   },
   "EURUSD": {
    "last_1h_close": 1795420800,
@@ -942,8 +942,9 @@
    "symbol": "EURUSD",
    "tf": "1H",
    "top": 1.0998680591583252,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1795420800,
+   "touched": true,
    "win": []
   },
   {
