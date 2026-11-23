@@ -1085,8 +1085,9 @@
    "symbol": "ETHUSD",
    "tf": "1H",
    "top": 1735.09,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1795455600,
+   "touched": true,
    "win": []
   }
  ]
