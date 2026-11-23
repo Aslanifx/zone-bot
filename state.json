@@ -10,11 +10,11 @@
    "last_1h_close": 1795413600
   },
   "EURUSD": {
-   "last_1h_close": 1795413600,
+   "last_1h_close": 1795417200,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795413600,
+   "last_1h_close": 1795417200,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -23,28 +23,28 @@
     "warned": true
    },
    "last_1h_close": 1795195800,
-   "next_1h_try": 1795417212,
+   "next_1h_try": 1795420812,
    "next_5m_try": 1795213533,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795413600,
+   "last_1h_close": 1795417200,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795413600,
+   "last_1h_close": 1795417200,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795413600,
+   "last_1h_close": 1795417200,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795413600,
+   "last_1h_close": 1795417200,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795413600,
+   "last_1h_close": 1795417200,
    "src": "GC=F"
   }
  },
@@ -914,6 +914,65 @@
    "touch_sent": true,
    "touch_t": 1795402800,
    "touched": true,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 1.0967316627502441,
+   "close_price": 1.1001100540161133,
+   "dir": "buy",
+   "expired": false,
+   "formed_close": 1795417200,
+   "hunt_level": 1.0967316627502441,
+   "hunt_t": 1795197600,
+   "id": "EURUSD-B-1795417200",
+   "late": false,
+   "level": 1.0998680591583252,
+   "modes": [
+    "L",
+    "N",
+    "O"
+   ],
+   "msg_id": 214,
+   "mss_swing_t": 1795186800,
+   "notified": true,
+   "src": "yahoo:EURUSD=X",
+   "sweep_extreme": 1.096611499786377,
+   "sweep_t": 1795204800,
+   "symbol": "EURUSD",
+   "tf": "1H",
+   "top": 1.0998680591583252,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 1.308078646659851,
+   "close_price": 1.3127493858337402,
+   "dir": "buy",
+   "expired": false,
+   "formed_close": 1795417200,
+   "hunt_level": 1.308078646659851,
+   "hunt_t": 1795140000,
+   "id": "GBPUSD-B-1795417200",
+   "late": false,
+   "level": 1.3128011226654053,
+   "modes": [
+    "L",
+    "N"
+   ],
+   "msg_id": 215,
+   "mss_swing_t": 1795179600,
+   "notified": true,
+   "src": "yahoo:GBPUSD=X",
+   "sweep_extreme": 1.3079931735992432,
+   "sweep_t": 1795204800,
+   "symbol": "GBPUSD",
+   "tf": "1H",
+   "top": 1.3128011226654053,
+   "touch_t": null,
+   "touched": false,
    "win": []
   }
  ]
