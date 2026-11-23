@@ -1,6 +1,6 @@
 {
  "algo": 3,
- "heartbeat": "2026-11-22",
+ "heartbeat": "2026-11-23",
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
@@ -11,17 +11,12 @@
   },
   "EURUSD": {
    "last_1h_close": 1795215600,
-   "next_1h_try": 1795392012,
+   "next_1h_try": 1795395612,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "fail_5m": {
-    "first": 1795235726,
-    "warned": true
-   },
    "last_1h_close": 1795215600,
-   "next_1h_try": 1795392012,
-   "next_5m_try": 1795235486,
+   "next_1h_try": 1795395612,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -30,33 +25,28 @@
     "warned": true
    },
    "last_1h_close": 1795195800,
-   "next_1h_try": 1795392012,
+   "next_1h_try": 1795395612,
    "next_5m_try": 1795213533,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795215599,
-   "next_1h_try": 1795392012,
+   "last_1h_close": 1795392000,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795215598,
-   "next_1h_try": 1795392012,
+   "last_1h_close": 1795392000,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795215596,
-   "next_1h_try": 1795392012,
+   "last_1h_close": 1795392000,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795212000,
-   "next_1h_try": 1795392012,
+   "last_1h_close": 1795395600,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795215597,
-   "next_1h_try": 1795392012,
+   "last_1h_close": 1795392000,
    "src": "GC=F"
   }
  },
