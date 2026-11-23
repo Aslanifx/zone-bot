@@ -7,38 +7,38 @@
    "last_1h_close": 1795449600
   },
   "ETHUSD": {
-   "last_1h_close": 1795449600
+   "last_1h_close": 1795453200
   },
   "EURUSD": {
-   "last_1h_close": 1795449600,
+   "last_1h_close": 1795453200,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795449600,
+   "last_1h_close": 1795453200,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1795449600,
+   "last_1h_close": 1795453200,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795449600,
+   "last_1h_close": 1795453200,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795449600,
+   "last_1h_close": 1795453200,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795449600,
+   "last_1h_close": 1795453200,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795449600,
+   "last_1h_close": 1795453200,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795449600,
+   "last_1h_close": 1795453200,
    "src": "GC=F"
   }
  },
@@ -257,35 +257,6 @@
    "top": 67401.07,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 1749.32,
-   "close_price": 1747.22,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1795021200,
-   "hunt_level": 1832.31,
-   "hunt_t": 1794902400,
-   "id": "ETHUSD-S-1795021200",
-   "late": false,
-   "level": 1749.32,
-   "modes": [
-    "L",
-    "N"
-   ],
-   "msg_id": null,
-   "mss_swing_t": 1794927600,
-   "notified": true,
-   "src": "coinbase:ETH-USD",
-   "sweep_extreme": 1834.27,
-   "sweep_t": 1794956400,
-   "symbol": "ETHUSD",
-   "tf": "1H",
-   "top": 1832.31,
-   "touch_t": 1795021200,
-   "touched": true,
    "win": []
   },
   {
