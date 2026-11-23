@@ -971,8 +971,9 @@
    "symbol": "GBPUSD",
    "tf": "1H",
    "top": 1.3128011226654053,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1795417500,
+   "touched": true,
    "win": []
   }
  ]
