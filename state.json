@@ -4,10 +4,10 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795399200
+   "last_1h_close": 1795402800
   },
   "ETHUSD": {
-   "last_1h_close": 1795399200
+   "last_1h_close": 1795402800
   },
   "EURUSD": {
    "last_1h_close": 1795402800,
@@ -912,6 +912,35 @@
    "top": 3596.699951171875,
    "touch_sent": true,
    "touch_t": 1795399500,
+   "touched": true,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 60649.5,
+   "close_price": 60516.93,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1795402800,
+   "hunt_level": 61324.99,
+   "hunt_t": 1795363200,
+   "id": "BTCUSD-S-1795402800",
+   "late": false,
+   "level": 60649.5,
+   "modes": [
+    "N"
+   ],
+   "msg_id": 212,
+   "mss_swing_t": 1795384800,
+   "notified": true,
+   "src": "coinbase:BTC-USD",
+   "sweep_extreme": 61381.85,
+   "sweep_t": 1795392000,
+   "symbol": "BTCUSD",
+   "tf": "1H",
+   "top": 61324.99,
+   "touch_sent": true,
+   "touch_t": 1795402800,
    "touched": true,
    "win": []
   }
