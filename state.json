@@ -1,6 +1,6 @@
 {
  "algo": 3,
- "heartbeat": "2026-11-23",
+ "heartbeat": "2026-11-24",
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
@@ -10,11 +10,11 @@
    "last_1h_close": 1795474800
   },
   "EURUSD": {
-   "last_1h_close": 1795474800,
+   "last_1h_close": 1795478400,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795474800,
+   "last_1h_close": 1795478400,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -22,7 +22,7 @@
     "first": 1795473643
    },
    "last_1h_close": 1795455000,
-   "next_1h_try": 1795478412,
+   "next_1h_try": 1795482012,
    "next_5m_try": 1795473339,
    "src": "^GDAXI"
   },
@@ -39,7 +39,7 @@
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795474800,
+   "last_1h_close": 1795478400,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -143,36 +143,6 @@
    "top": 63232.26,
    "touch_sent": true,
    "touch_t": 1795067400,
-   "touched": true,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 26951.75,
-   "close_price": 27422.75,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1795046400,
-   "hunt_level": 26951.75,
-   "hunt_t": 1795010400,
-   "id": "NAS100-B-1795046400",
-   "late": false,
-   "level": 27424.5,
-   "modes": [
-    "L",
-    "N",
-    "O"
-   ],
-   "msg_id": null,
-   "mss_swing_t": 1794996000,
-   "notified": true,
-   "src": "yahoo:NQ=F",
-   "sweep_extreme": 26921.75,
-   "sweep_t": 1795017600,
-   "symbol": "NAS100",
-   "tf": "1H",
-   "top": 27424.5,
-   "touch_t": 1795046400,
    "touched": true,
    "win": []
   },
