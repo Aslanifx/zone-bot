@@ -10,11 +10,11 @@
    "last_1h_close": 1795478400
   },
   "EURUSD": {
-   "last_1h_close": 1795478400,
+   "last_1h_close": 1795482000,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795478400,
+   "last_1h_close": 1795482000,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -23,28 +23,28 @@
     "warned": true
    },
    "last_1h_close": 1795455000,
-   "next_1h_try": 1795482012,
+   "next_1h_try": 1795485612,
    "next_5m_try": 1795473339,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795478400,
+   "last_1h_close": 1795482000,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795478400,
+   "last_1h_close": 1795482000,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795478400,
+   "last_1h_close": 1795482000,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795478400,
+   "last_1h_close": 1795482000,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795478400,
+   "last_1h_close": 1795482000,
    "src": "GC=F"
   }
  },
@@ -144,34 +144,6 @@
    "top": 63232.26,
    "touch_sent": true,
    "touch_t": 1795067400,
-   "touched": true,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 7308.0,
-   "close_price": 7393.25,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1795050000,
-   "hunt_level": 7308.0,
-   "hunt_t": 1794927600,
-   "id": "SPX500-B-1795050000",
-   "late": false,
-   "level": 7391.0,
-   "modes": [
-    "N"
-   ],
-   "msg_id": null,
-   "mss_swing_t": 1795006800,
-   "notified": true,
-   "src": "yahoo:ES=F",
-   "sweep_extreme": 7305.25,
-   "sweep_t": 1795017600,
-   "symbol": "SPX500",
-   "tf": "1H",
-   "top": 7391.0,
-   "touch_t": 1795050000,
    "touched": true,
    "win": []
   },
@@ -1064,6 +1036,36 @@
    "touch_sent": true,
    "touch_t": 1795455600,
    "touched": true,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 3629.800048828125,
+   "close_price": 3659.800048828125,
+   "dir": "buy",
+   "expired": false,
+   "formed_close": 1795482000,
+   "hunt_level": 3629.800048828125,
+   "hunt_t": 1795464000,
+   "id": "XAUUSD-B-1795482000",
+   "late": false,
+   "level": 3659.39990234375,
+   "modes": [
+    "L",
+    "N",
+    "O"
+   ],
+   "msg_id": 230,
+   "mss_swing_t": 1795460400,
+   "notified": true,
+   "src": "yahoo:GC=F",
+   "sweep_extreme": 3618.5,
+   "sweep_t": 1795474800,
+   "symbol": "XAUUSD",
+   "tf": "1H",
+   "top": 3659.39990234375,
+   "touch_t": null,
+   "touched": false,
    "win": []
   }
  ]
