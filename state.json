@@ -7,7 +7,7 @@
    "last_1h_close": 1795554000
   },
   "ETHUSD": {
-   "last_1h_close": 1795550400
+   "last_1h_close": 1795554000
   },
   "EURUSD": {
    "last_1h_close": 1795554000,
@@ -20,7 +20,7 @@
   "GER40": {
    "last_1h_close": 1795541400,
    "next_1h_try": 1795557612,
-   "next_5m_try": 1795554328,
+   "next_5m_try": 1795554929,
    "src": "^GDAXI"
   },
   "NAS100": {
