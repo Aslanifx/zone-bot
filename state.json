@@ -1064,8 +1064,9 @@
    "symbol": "XAUUSD",
    "tf": "1H",
    "top": 3659.39990234375,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1795482000,
+   "touched": true,
    "win": []
   }
  ]
