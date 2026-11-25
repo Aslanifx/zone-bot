@@ -10,27 +10,27 @@
    "last_1h_close": 1795597200
   },
   "EURUSD": {
-   "last_1h_close": 1795597200,
+   "last_1h_close": 1795600800,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795597200,
+   "last_1h_close": 1795600800,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1795597200,
+   "last_1h_close": 1795600800,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795597200,
+   "last_1h_close": 1795600800,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795597200,
+   "last_1h_close": 1795600800,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795597200,
+   "last_1h_close": 1795600800,
    "src": "YM=F"
   },
   "USDJPY": {
@@ -38,7 +38,7 @@
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795597200,
+   "last_1h_close": 1795600800,
    "src": "GC=F"
   }
  },
@@ -202,35 +202,6 @@
    "top": 1.317228078842163,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 158.86000061035156,
-   "close_price": 158.71499633789062,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1795168800,
-   "hunt_level": 159.9600067138672,
-   "hunt_t": 1794585600,
-   "id": "USDJPY-S-1795168800",
-   "late": false,
-   "level": 158.86000061035156,
-   "modes": [
-    "L"
-   ],
-   "msg_id": 185,
-   "mss_swing_t": 1794906000,
-   "notified": true,
-   "src": "yahoo:JPY=X",
-   "sweep_extreme": 159.96800231933594,
-   "sweep_t": 1795089600,
-   "symbol": "USDJPY",
-   "tf": "1H",
-   "top": 159.9600067138672,
-   "touch_sent": true,
-   "touch_t": 1795170300,
-   "touched": true,
    "win": []
   },
   {
@@ -1068,6 +1039,64 @@
    "touch_sent": true,
    "touch_t": 1795595400,
    "touched": true,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 49693.0,
+   "close_price": 49620.0,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1795600800,
+   "hunt_level": 49990.0,
+   "hunt_t": 1795568400,
+   "id": "US30-S-1795600800",
+   "late": false,
+   "level": 49693.0,
+   "modes": [
+    "L",
+    "N"
+   ],
+   "msg_id": 257,
+   "mss_swing_t": 1795590000,
+   "notified": true,
+   "src": "yahoo:YM=F",
+   "sweep_extreme": 50004.0,
+   "sweep_t": 1795593600,
+   "symbol": "US30",
+   "tf": "1H",
+   "top": 49990.0,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 7120.5,
+   "close_price": 7106.0,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1795600800,
+   "hunt_level": 7171.0,
+   "hunt_t": 1795586400,
+   "id": "SPX500-S-1795600800",
+   "late": false,
+   "level": 7120.5,
+   "modes": [
+    "L",
+    "N"
+   ],
+   "msg_id": 258,
+   "mss_swing_t": 1795590000,
+   "notified": true,
+   "src": "yahoo:ES=F",
+   "sweep_extreme": 7172.0,
+   "sweep_t": 1795593600,
+   "symbol": "SPX500",
+   "tf": "1H",
+   "top": 7171.0,
+   "touch_t": null,
+   "touched": false,
    "win": []
   }
  ]
