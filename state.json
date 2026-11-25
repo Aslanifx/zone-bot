@@ -10,11 +10,11 @@
    "last_1h_close": 1795568400
   },
   "EURUSD": {
-   "last_1h_close": 1795568400,
+   "last_1h_close": 1795572000,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795568400,
+   "last_1h_close": 1795572000,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -23,28 +23,28 @@
     "warned": true
    },
    "last_1h_close": 1795541400,
-   "next_1h_try": 1795572012,
+   "next_1h_try": 1795575612,
    "next_5m_try": 1795559143,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795568400,
+   "last_1h_close": 1795572000,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795568400,
+   "last_1h_close": 1795572000,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795568400,
+   "last_1h_close": 1795572000,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795568400,
+   "last_1h_close": 1795572000,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795568400,
+   "last_1h_close": 1795572000,
    "src": "GC=F"
   }
  },
@@ -208,37 +208,6 @@
    "top": 1.317228078842163,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 1734.35,
-   "close_price": 1733.99,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1795140000,
-   "hunt_level": 1764.5,
-   "hunt_t": 1795125600,
-   "id": "ETHUSD-S-1795140000",
-   "late": false,
-   "level": 1734.35,
-   "modes": [
-    "L",
-    "N",
-    "O"
-   ],
-   "msg_id": 149,
-   "mss_swing_t": 1795122000,
-   "notified": true,
-   "src": "coinbase:ETH-USD",
-   "sweep_extreme": 1768.36,
-   "sweep_t": 1795136400,
-   "symbol": "ETHUSD",
-   "tf": "1H",
-   "top": 1764.5,
-   "touch_sent": true,
-   "touch_t": 1795140000,
-   "touched": true,
    "win": []
   },
   {
@@ -1103,6 +1072,36 @@
    "touch_sent": true,
    "touch_t": 1795536000,
    "touched": true,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 1.0962508916854858,
+   "close_price": 1.0960105657577515,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1795572000,
+   "hunt_level": 1.0976948738098145,
+   "hunt_t": 1795536000,
+   "id": "EURUSD-S-1795572000",
+   "late": false,
+   "level": 1.0962508916854858,
+   "modes": [
+    "L",
+    "N",
+    "O"
+   ],
+   "msg_id": 250,
+   "mss_swing_t": 1795532400,
+   "notified": true,
+   "src": "yahoo:EURUSD=X",
+   "sweep_extreme": 1.0978153944015503,
+   "sweep_t": 1795543200,
+   "symbol": "EURUSD",
+   "tf": "1H",
+   "top": 1.0976948738098145,
+   "touch_t": null,
+   "touched": false,
    "win": []
   }
  ]
