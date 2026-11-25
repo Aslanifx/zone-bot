@@ -7,7 +7,7 @@
    "last_1h_close": 1795575600
   },
   "ETHUSD": {
-   "last_1h_close": 1795572000
+   "last_1h_close": 1795575600
   },
   "EURUSD": {
    "last_1h_close": 1795575600,
@@ -1129,8 +1129,9 @@
    "symbol": "USDJPY",
    "tf": "1H",
    "top": 159.3040008544922,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1795575600,
+   "touched": true,
    "win": []
   }
  ]
