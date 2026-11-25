@@ -10,35 +10,35 @@
    "last_1h_close": 1795618800
   },
   "EURUSD": {
-   "last_1h_close": 1795618800,
+   "last_1h_close": 1795622400,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795618800,
+   "last_1h_close": 1795622400,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1795618800,
+   "last_1h_close": 1795622400,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795618800,
+   "last_1h_close": 1795622400,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795618800,
+   "last_1h_close": 1795622400,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795618800,
+   "last_1h_close": 1795622400,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795618800,
+   "last_1h_close": 1795626000,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795618800,
+   "last_1h_close": 1795622400,
    "src": "GC=F"
   }
  },
@@ -178,65 +178,6 @@
    "top": 1.317228078842163,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 26000.0,
-   "close_price": 25947.75,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1795190400,
-   "hunt_level": 26447.75,
-   "hunt_t": 1795161600,
-   "id": "NAS100-S-1795190400",
-   "late": false,
-   "level": 26000.0,
-   "modes": [
-    "L",
-    "N"
-   ],
-   "msg_id": 192,
-   "mss_swing_t": 1795179600,
-   "notified": true,
-   "src": "yahoo:NQ=F",
-   "sweep_extreme": 26451.25,
-   "sweep_t": 1795183200,
-   "symbol": "NAS100",
-   "tf": "1H",
-   "top": 26447.75,
-   "touch_sent": true,
-   "touch_t": 1795424400,
-   "touched": true,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 1715.85,
-   "close_price": 1653.64,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1795190400,
-   "hunt_level": 1758.12,
-   "hunt_t": 1795161600,
-   "id": "ETHUSD-S-1795190400",
-   "late": false,
-   "level": 1715.85,
-   "modes": [
-    "O"
-   ],
-   "msg_id": 193,
-   "mss_swing_t": 1795147200,
-   "notified": true,
-   "src": "coinbase:ETH-USD",
-   "sweep_extreme": 1761.47,
-   "sweep_t": 1795168800,
-   "symbol": "ETHUSD",
-   "tf": "1H",
-   "top": 1758.12,
-   "touch_sent": true,
-   "touch_t": 1795341300,
-   "touched": true,
    "win": []
   },
   {
