@@ -4,10 +4,10 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795647600
+   "last_1h_close": 1795651200
   },
   "ETHUSD": {
-   "last_1h_close": 1795647600
+   "last_1h_close": 1795651200
   },
   "EURUSD": {
    "last_1h_close": 1795644000,
@@ -21,7 +21,8 @@
   },
   "GER40": {
    "fail_5m": {
-    "first": 1795646138
+    "first": 1795646138,
+    "warned": true
    },
    "last_1h_close": 1795627800,
    "next_1h_try": 1795654812,
