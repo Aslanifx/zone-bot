@@ -18,13 +18,8 @@
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "fail_5m": {
-    "first": 1795646138,
-    "warned": true
-   },
    "last_1h_close": 1795627800,
    "next_1h_try": 1795683612,
-   "next_5m_try": 1795646125,
    "src": "^GDAXI"
   },
   "NAS100": {
