@@ -41,6 +41,9 @@
    "src": "JPY=X"
   },
   "XAUUSD": {
+   "fail_5m": {
+    "first": 1795691444
+   },
    "last_1h_close": 1795669200,
    "next_1h_try": 1795694412,
    "next_5m_try": 1795691137,
