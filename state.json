@@ -36,7 +36,7 @@
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795665600,
+   "last_1h_close": 1795669200,
    "src": "YM=F"
   },
   "USDJPY": {
@@ -44,7 +44,7 @@
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795665600,
+   "last_1h_close": 1795669200,
    "src": "GC=F"
   }
  },
