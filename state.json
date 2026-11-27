@@ -10,15 +10,15 @@
    "last_1h_close": 1795791600
   },
   "EURUSD": {
-   "last_1h_close": 1795791600,
+   "last_1h_close": 1795795200,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795791600,
+   "last_1h_close": 1795795200,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1795791600,
+   "last_1h_close": 1795795200,
    "src": "^GDAXI"
   },
   "NAS100": {
@@ -34,7 +34,7 @@
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795791600,
+   "last_1h_close": 1795795200,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -1281,6 +1281,35 @@
    "symbol": "ETHUSD",
    "tf": "1H",
    "top": 1747.89,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 25337.7890625,
+   "close_price": 25432.779296875,
+   "dir": "buy",
+   "expired": false,
+   "formed_close": 1795795200,
+   "hunt_level": 25337.7890625,
+   "hunt_t": 1795777200,
+   "id": "GER40-B-1795795200",
+   "late": false,
+   "level": 25412.810546875,
+   "modes": [
+    "L",
+    "N"
+   ],
+   "msg_id": 294,
+   "mss_swing_t": 1795784400,
+   "notified": true,
+   "src": "yahoo:^GDAXI",
+   "sweep_extreme": 25292.759765625,
+   "sweep_t": 1795788000,
+   "symbol": "GER40",
+   "tf": "1H",
+   "top": 25412.810546875,
    "touch_t": null,
    "touched": false,
    "win": []
