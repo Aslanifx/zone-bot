@@ -20,7 +20,7 @@
   "GER40": {
    "last_1h_close": 1795800600,
    "next_1h_try": 1795820412,
-   "next_5m_try": 1795817447,
+   "next_5m_try": 1795818333,
    "src": "^GDAXI"
   },
   "NAS100": {
@@ -45,7 +45,7 @@
   "XAUUSD": {
    "last_1h_close": 1795806000,
    "next_1h_try": 1795817735,
-   "next_5m_try": 1795817447,
+   "next_5m_try": 1795818333,
    "src": "GC=F"
   }
  },
