@@ -19,8 +19,8 @@
   },
   "GER40": {
    "last_1h_close": 1795800600,
-   "next_1h_try": 1795806639,
-   "next_5m_try": 1795806404,
+   "next_1h_try": 1795807841,
+   "next_5m_try": 1795807241,
    "src": "^GDAXI"
   },
   "NAS100": {
@@ -1342,8 +1342,9 @@
    "symbol": "GBPUSD",
    "tf": "1H",
    "top": 1.313059687614441,
-   "touch_t": null,
-   "touched": false,
+   "touch_sent": true,
+   "touch_t": 1795806300,
+   "touched": true,
    "win": []
   }
  ]
