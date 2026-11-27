@@ -25,14 +25,17 @@
   },
   "NAS100": {
    "last_1h_close": 1795806000,
+   "next_1h_try": 1795812042,
    "src": "NQ=F"
   },
   "SPX500": {
    "last_1h_close": 1795806000,
+   "next_1h_try": 1795812042,
    "src": "ES=F"
   },
   "US30": {
    "last_1h_close": 1795806000,
+   "next_1h_try": 1795812042,
    "src": "YM=F"
   },
   "USDJPY": {
@@ -41,6 +44,7 @@
   },
   "XAUUSD": {
    "last_1h_close": 1795806000,
+   "next_1h_try": 1795812042,
    "next_5m_try": 1795811143,
    "src": "GC=F"
   }
