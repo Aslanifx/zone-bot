@@ -10,39 +10,35 @@
    "last_1h_close": 1795788000
   },
   "EURUSD": {
-   "last_1h_close": 1795788000,
+   "last_1h_close": 1795791600,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795788000,
+   "last_1h_close": 1795791600,
    "src": "GBPUSD=X"
   },
   "GER40": {
-   "last_1h_close": 1795788000,
+   "last_1h_close": 1795791600,
    "src": "^GDAXI"
   },
   "NAS100": {
-   "last_1h_close": 1795669200,
-   "next_1h_try": 1795791612,
+   "last_1h_close": 1795793400,
    "src": "NQ=F"
   },
   "SPX500": {
-   "last_1h_close": 1795669200,
-   "next_1h_try": 1795791612,
+   "last_1h_close": 1795793400,
    "src": "ES=F"
   },
   "US30": {
-   "last_1h_close": 1795669200,
-   "next_1h_try": 1795791612,
+   "last_1h_close": 1795793400,
    "src": "YM=F"
   },
   "USDJPY": {
-   "last_1h_close": 1795788000,
+   "last_1h_close": 1795791600,
    "src": "JPY=X"
   },
   "XAUUSD": {
-   "last_1h_close": 1795669200,
-   "next_1h_try": 1795791612,
+   "last_1h_close": 1795793400,
    "src": "GC=F"
   }
  },
