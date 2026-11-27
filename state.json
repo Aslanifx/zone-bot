@@ -18,6 +18,9 @@
    "src": "GBPUSD=X"
   },
   "GER40": {
+   "fail_5m": {
+    "first": 1795818933
+   },
    "last_1h_close": 1795800600,
    "next_1h_try": 1795820412,
    "next_5m_try": 1795818933,
@@ -45,7 +48,7 @@
   "XAUUSD": {
    "last_1h_close": 1795806000,
    "next_1h_try": 1795820412,
-   "next_5m_try": 1795818933,
+   "next_5m_try": 1795819533,
    "src": "GC=F"
   }
  },
