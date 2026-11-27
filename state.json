@@ -10,11 +10,11 @@
    "last_1h_close": 1795744800
   },
   "EURUSD": {
-   "last_1h_close": 1795744800,
+   "last_1h_close": 1795748400,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795744800,
+   "last_1h_close": 1795748400,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -23,23 +23,23 @@
     "warned": true
    },
    "last_1h_close": 1795714200,
-   "next_1h_try": 1795748412,
+   "next_1h_try": 1795752012,
    "next_5m_try": 1795732532,
    "src": "^GDAXI"
   },
   "NAS100": {
    "last_1h_close": 1795669200,
-   "next_1h_try": 1795748412,
+   "next_1h_try": 1795752012,
    "src": "NQ=F"
   },
   "SPX500": {
    "last_1h_close": 1795669200,
-   "next_1h_try": 1795748412,
+   "next_1h_try": 1795752012,
    "src": "ES=F"
   },
   "US30": {
    "last_1h_close": 1795669200,
-   "next_1h_try": 1795748412,
+   "next_1h_try": 1795752012,
    "src": "YM=F"
   },
   "USDJPY": {
@@ -52,7 +52,7 @@
     "warned": true
    },
    "last_1h_close": 1795669200,
-   "next_1h_try": 1795748412,
+   "next_1h_try": 1795752012,
    "next_5m_try": 1795691137,
    "src": "GC=F"
   }
@@ -169,37 +169,6 @@
    "top": 1.317228078842163,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 1670.8,
-   "close_price": 1668.48,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1795316400,
-   "hunt_level": 1686.03,
-   "hunt_t": 1795294800,
-   "id": "ETHUSD-S-1795316400",
-   "late": false,
-   "level": 1670.8,
-   "modes": [
-    "L",
-    "N",
-    "O"
-   ],
-   "msg_id": 203,
-   "mss_swing_t": 1795273200,
-   "notified": true,
-   "src": "coinbase:ETH-USD",
-   "sweep_extreme": 1686.64,
-   "sweep_t": 1795309200,
-   "symbol": "ETHUSD",
-   "tf": "1H",
-   "top": 1686.03,
-   "touch_sent": true,
-   "touch_t": 1795335000,
-   "touched": true,
    "win": []
   },
   {
@@ -1151,6 +1120,34 @@
    "symbol": "GBPUSD",
    "tf": "1H",
    "top": 1.3109767436981201,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 1.3096375465393066,
+   "close_price": 1.3124737739562988,
+   "dir": "buy",
+   "expired": false,
+   "formed_close": 1795748400,
+   "hunt_level": 1.3096375465393066,
+   "hunt_t": 1795690800,
+   "id": "GBPUSD-B-1795748400",
+   "late": false,
+   "level": 1.3123359680175781,
+   "modes": [
+    "L"
+   ],
+   "msg_id": 280,
+   "mss_swing_t": 1795701600,
+   "notified": true,
+   "src": "yahoo:GBPUSD=X",
+   "sweep_extreme": 1.3094146251678467,
+   "sweep_t": 1795737600,
+   "symbol": "GBPUSD",
+   "tf": "1H",
+   "top": 1.3123359680175781,
    "touch_t": null,
    "touched": false,
    "win": []
