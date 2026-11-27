@@ -4,10 +4,10 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795744800
+   "last_1h_close": 1795748400
   },
   "ETHUSD": {
-   "last_1h_close": 1795744800
+   "last_1h_close": 1795748400
   },
   "EURUSD": {
    "last_1h_close": 1795748400,
@@ -1148,6 +1148,63 @@
    "symbol": "GBPUSD",
    "tf": "1H",
    "top": 1.3123359680175781,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 60314.69,
+   "close_price": 61239.89,
+   "dir": "buy",
+   "expired": false,
+   "formed_close": 1795748400,
+   "hunt_level": 60314.69,
+   "hunt_t": 1795716000,
+   "id": "BTCUSD-B-1795748400",
+   "late": false,
+   "level": 60923.01,
+   "modes": [
+    "L",
+    "N"
+   ],
+   "msg_id": 281,
+   "mss_swing_t": 1795726800,
+   "notified": true,
+   "src": "coinbase:BTC-USD",
+   "sweep_extreme": 60285.44,
+   "sweep_t": 1795734000,
+   "symbol": "BTCUSD",
+   "tf": "1H",
+   "top": 60923.01,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 1676.92,
+   "close_price": 1720.04,
+   "dir": "buy",
+   "expired": false,
+   "formed_close": 1795748400,
+   "hunt_level": 1676.92,
+   "hunt_t": 1795636800,
+   "id": "ETHUSD-B-1795748400",
+   "late": false,
+   "level": 1709.96,
+   "modes": [
+    "N"
+   ],
+   "msg_id": 282,
+   "mss_swing_t": 1795694400,
+   "notified": true,
+   "src": "coinbase:ETH-USD",
+   "sweep_extreme": 1665.51,
+   "sweep_t": 1795705200,
+   "symbol": "ETHUSD",
+   "tf": "1H",
+   "top": 1709.96,
    "touch_t": null,
    "touched": false,
    "win": []
