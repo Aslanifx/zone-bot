@@ -10,11 +10,11 @@
    "last_1h_close": 1795802400
   },
   "EURUSD": {
-   "last_1h_close": 1795802400,
+   "last_1h_close": 1795806000,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
-   "last_1h_close": 1795802400,
+   "last_1h_close": 1795806000,
    "src": "GBPUSD=X"
   },
   "GER40": {
@@ -1314,6 +1314,34 @@
    "symbol": "GER40",
    "tf": "1H",
    "top": 25412.810546875,
+   "touch_t": null,
+   "touched": false,
+   "win": []
+  },
+  {
+   "backfill": false,
+   "bottom": 1.3094146251678467,
+   "close_price": 1.3093804121017456,
+   "dir": "sell",
+   "expired": false,
+   "formed_close": 1795806000,
+   "hunt_level": 1.313059687614441,
+   "hunt_t": 1795748400,
+   "id": "GBPUSD-S-1795806000",
+   "late": false,
+   "level": 1.3094146251678467,
+   "modes": [
+    "O"
+   ],
+   "msg_id": 297,
+   "mss_swing_t": 1795737600,
+   "notified": true,
+   "src": "yahoo:GBPUSD=X",
+   "sweep_extreme": 1.313094139099121,
+   "sweep_t": 1795773600,
+   "symbol": "GBPUSD",
+   "tf": "1H",
+   "top": 1.313059687614441,
    "touch_t": null,
    "touched": false,
    "win": []
