@@ -11,12 +11,12 @@
   },
   "EURUSD": {
    "last_1h_close": 1795820400,
-   "next_1h_try": 1795834812,
+   "next_1h_try": 1795838412,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
    "last_1h_close": 1795820400,
-   "next_1h_try": 1795834812,
+   "next_1h_try": 1795838412,
    "next_5m_try": 1795835126,
    "src": "GBPUSD=X"
   },
@@ -26,28 +26,28 @@
     "warned": true
    },
    "last_1h_close": 1795800600,
-   "next_1h_try": 1795834812,
+   "next_1h_try": 1795838412,
    "next_5m_try": 1795818933,
    "src": "^GDAXI"
   },
   "NAS100": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795834812,
+   "next_1h_try": 1795838412,
    "src": "NQ=F"
   },
   "SPX500": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795834812,
+   "next_1h_try": 1795838412,
    "src": "ES=F"
   },
   "US30": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795834812,
+   "next_1h_try": 1795838412,
    "src": "YM=F"
   },
   "USDJPY": {
    "last_1h_close": 1795820400,
-   "next_1h_try": 1795834812,
+   "next_1h_try": 1795838412,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -56,7 +56,7 @@
     "warned": true
    },
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795834812,
+   "next_1h_try": 1795838412,
    "next_5m_try": 1795824334,
    "src": "GC=F"
   }
@@ -173,35 +173,6 @@
    "top": 1.317228078842163,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 60649.5,
-   "close_price": 60516.93,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1795402800,
-   "hunt_level": 61324.99,
-   "hunt_t": 1795363200,
-   "id": "BTCUSD-S-1795402800",
-   "late": false,
-   "level": 60649.5,
-   "modes": [
-    "N"
-   ],
-   "msg_id": 212,
-   "mss_swing_t": 1795384800,
-   "notified": true,
-   "src": "coinbase:BTC-USD",
-   "sweep_extreme": 61381.85,
-   "sweep_t": 1795392000,
-   "symbol": "BTCUSD",
-   "tf": "1H",
-   "top": 61324.99,
-   "touch_sent": true,
-   "touch_t": 1795402800,
-   "touched": true,
    "win": []
   },
   {
