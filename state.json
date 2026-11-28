@@ -15,6 +15,9 @@
    "src": "EURUSD=X"
   },
   "GBPUSD": {
+   "fail_5m": {
+    "first": 1795840245
+   },
    "last_1h_close": 1795820400,
    "next_1h_try": 1795842012,
    "next_5m_try": 1795839932,
