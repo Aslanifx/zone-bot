@@ -7,11 +7,11 @@
    "last_1h_close": 1795870800
   },
   "ETHUSD": {
-   "last_1h_close": 1795870800
+   "last_1h_close": 1795874400
   },
   "EURUSD": {
    "last_1h_close": 1795820400,
-   "next_1h_try": 1795874412,
+   "next_1h_try": 1795878012,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
@@ -20,7 +20,7 @@
     "warned": true
    },
    "last_1h_close": 1795820400,
-   "next_1h_try": 1795874412,
+   "next_1h_try": 1795878012,
    "next_5m_try": 1795839932,
    "src": "GBPUSD=X"
   },
@@ -30,28 +30,28 @@
     "warned": true
    },
    "last_1h_close": 1795800600,
-   "next_1h_try": 1795874412,
+   "next_1h_try": 1795878012,
    "next_5m_try": 1795818933,
    "src": "^GDAXI"
   },
   "NAS100": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795874412,
+   "next_1h_try": 1795878012,
    "src": "NQ=F"
   },
   "SPX500": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795874412,
+   "next_1h_try": 1795878012,
    "src": "ES=F"
   },
   "US30": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795874412,
+   "next_1h_try": 1795878012,
    "src": "YM=F"
   },
   "USDJPY": {
    "last_1h_close": 1795820400,
-   "next_1h_try": 1795874412,
+   "next_1h_try": 1795878012,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -60,7 +60,7 @@
     "warned": true
    },
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795874412,
+   "next_1h_try": 1795878012,
    "next_5m_try": 1795824334,
    "src": "GC=F"
   }
@@ -177,67 +177,6 @@
    "top": 1.317228078842163,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 61051.82,
-   "close_price": 63785.06,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1795442400,
-   "hunt_level": 61051.82,
-   "hunt_t": 1795420800,
-   "id": "BTCUSD-B-1795442400",
-   "late": false,
-   "level": 61844.51,
-   "modes": [
-    "L",
-    "N"
-   ],
-   "msg_id": 225,
-   "mss_swing_t": 1795424400,
-   "notified": true,
-   "src": "coinbase:BTC-USD",
-   "sweep_extreme": 60991.38,
-   "sweep_t": 1795435200,
-   "symbol": "BTCUSD",
-   "tf": "1H",
-   "top": 61844.51,
-   "touch_sent": true,
-   "touch_t": 1795452300,
-   "touched": true,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 1712.89,
-   "close_price": 1809.37,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1795442400,
-   "hunt_level": 1712.89,
-   "hunt_t": 1795420800,
-   "id": "ETHUSD-B-1795442400",
-   "late": false,
-   "level": 1735.09,
-   "modes": [
-    "L",
-    "N",
-    "O"
-   ],
-   "msg_id": 226,
-   "mss_swing_t": 1795410000,
-   "notified": true,
-   "src": "coinbase:ETH-USD",
-   "sweep_extreme": 1711.15,
-   "sweep_t": 1795435200,
-   "symbol": "ETHUSD",
-   "tf": "1H",
-   "top": 1735.09,
-   "touch_sent": true,
-   "touch_t": 1795455600,
-   "touched": true,
    "win": []
   },
   {
