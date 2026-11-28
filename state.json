@@ -52,7 +52,8 @@
   },
   "XAUUSD": {
    "fail_5m": {
-    "first": 1795824334
+    "first": 1795824334,
+    "warned": true
    },
    "last_1h_close": 1795806000,
    "next_1h_try": 1795831212,
