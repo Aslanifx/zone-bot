@@ -4,10 +4,10 @@
  "started": "2026-11-04",
  "symbols": {
   "BTCUSD": {
-   "last_1h_close": 1795820400
+   "last_1h_close": 1795824000
   },
   "ETHUSD": {
-   "last_1h_close": 1795820400
+   "last_1h_close": 1795824000
   },
   "EURUSD": {
    "last_1h_close": 1795820400,
@@ -19,7 +19,8 @@
   },
   "GER40": {
    "fail_5m": {
-    "first": 1795818933
+    "first": 1795818933,
+    "warned": true
    },
    "last_1h_close": 1795800600,
    "next_1h_try": 1795827612,
@@ -46,6 +47,9 @@
    "src": "JPY=X"
   },
   "XAUUSD": {
+   "fail_5m": {
+    "first": 1795824334
+   },
    "last_1h_close": 1795806000,
    "next_1h_try": 1795827612,
    "next_5m_try": 1795824334,
