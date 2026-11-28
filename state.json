@@ -26,23 +26,23 @@
     "warned": true
    },
    "last_1h_close": 1795800600,
-   "next_1h_try": 1795831212,
+   "next_1h_try": 1795834812,
    "next_5m_try": 1795818933,
    "src": "^GDAXI"
   },
   "NAS100": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795831212,
+   "next_1h_try": 1795834812,
    "src": "NQ=F"
   },
   "SPX500": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795831212,
+   "next_1h_try": 1795834812,
    "src": "ES=F"
   },
   "US30": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795831212,
+   "next_1h_try": 1795834812,
    "src": "YM=F"
   },
   "USDJPY": {
@@ -56,7 +56,7 @@
     "warned": true
    },
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795831212,
+   "next_1h_try": 1795834812,
    "next_5m_try": 1795824334,
    "src": "GC=F"
   }
@@ -173,35 +173,6 @@
    "top": 1.317228078842163,
    "touch_t": null,
    "touched": false,
-   "win": []
-  },
-  {
-   "backfill": false,
-   "bottom": 3514.89990234375,
-   "close_price": 3605.300048828125,
-   "dir": "buy",
-   "expired": false,
-   "formed_close": 1795399200,
-   "hunt_level": 3514.89990234375,
-   "hunt_t": 1795150800,
-   "id": "XAUUSD-B-1795399200",
-   "late": false,
-   "level": 3596.699951171875,
-   "modes": [
-    "L"
-   ],
-   "msg_id": 210,
-   "mss_swing_t": 1795168800,
-   "notified": true,
-   "src": "yahoo:GC=F",
-   "sweep_extreme": 3502.89990234375,
-   "sweep_t": 1795197600,
-   "symbol": "XAUUSD",
-   "tf": "1H",
-   "top": 3596.699951171875,
-   "touch_sent": true,
-   "touch_t": 1795399500,
-   "touched": true,
    "win": []
   },
   {
