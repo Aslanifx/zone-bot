@@ -7,11 +7,11 @@
    "last_1h_close": 1795874400
   },
   "ETHUSD": {
-   "last_1h_close": 1795874400
+   "last_1h_close": 1795878000
   },
   "EURUSD": {
    "last_1h_close": 1795820400,
-   "next_1h_try": 1795878012,
+   "next_1h_try": 1795881612,
    "src": "EURUSD=X"
   },
   "GBPUSD": {
@@ -20,7 +20,7 @@
     "warned": true
    },
    "last_1h_close": 1795820400,
-   "next_1h_try": 1795878012,
+   "next_1h_try": 1795881612,
    "next_5m_try": 1795839932,
    "src": "GBPUSD=X"
   },
@@ -30,28 +30,28 @@
     "warned": true
    },
    "last_1h_close": 1795800600,
-   "next_1h_try": 1795878012,
+   "next_1h_try": 1795881612,
    "next_5m_try": 1795818933,
    "src": "^GDAXI"
   },
   "NAS100": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795878012,
+   "next_1h_try": 1795881612,
    "src": "NQ=F"
   },
   "SPX500": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795878012,
+   "next_1h_try": 1795881612,
    "src": "ES=F"
   },
   "US30": {
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795878012,
+   "next_1h_try": 1795881612,
    "src": "YM=F"
   },
   "USDJPY": {
    "last_1h_close": 1795820400,
-   "next_1h_try": 1795878012,
+   "next_1h_try": 1795881612,
    "src": "JPY=X"
   },
   "XAUUSD": {
@@ -60,7 +60,7 @@
     "warned": true
    },
    "last_1h_close": 1795806000,
-   "next_1h_try": 1795878012,
+   "next_1h_try": 1795881612,
    "next_5m_try": 1795824334,
    "src": "GC=F"
   }
@@ -118,35 +118,6 @@
    "symbol": "GER40",
    "tf": "1H",
    "top": 26817.439453125,
-   "touch_t": null,
-   "touched": false,
-   "win": []
-  },
-  {
-   "backfill": true,
-   "backfill_age": 402935,
-   "bottom": 66369.12,
-   "close_price": 65863.11,
-   "dir": "sell",
-   "expired": false,
-   "formed_close": 1794668400,
-   "hunt_level": 67401.07,
-   "hunt_t": 1794639600,
-   "id": "BTCUSD-S-1794668400",
-   "late": false,
-   "level": 66369.12,
-   "modes": [
-    "O"
-   ],
-   "msg_id": 135,
-   "mss_swing_t": 1794628800,
-   "notified": true,
-   "src": "coinbase:BTC-USD",
-   "sweep_extreme": 67462.72,
-   "sweep_t": 1794646800,
-   "symbol": "BTCUSD",
-   "tf": "1H",
-   "top": 67401.07,
    "touch_t": null,
    "touched": false,
    "win": []
